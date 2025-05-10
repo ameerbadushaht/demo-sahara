@@ -1,0 +1,1167 @@
+@media(max-width:1350px){
+    .echoPrntSec {
+        padding: 10px 20px;
+    }
+
+    .PrcCnt h2 {
+        font-size: 37px;
+    }
+ /* ABOUT STYLE */
+ .AbHroImg {
+    right: 0px;
+}
+.AbHroImg img{
+    width: 310px;
+}
+ .AbtImg {
+    width: 300px;
+    height: 400px;
+}
+.listdetails{
+    display: block;
+  }
+  .Ab-head {
+    max-width: 100%;
+}
+.Ab-head h2 {
+    font-size: 29px;
+}
+.aboutSahara ul li {
+    padding: 8px 0 8px 5px;
+}
+/* CONTACT STYLE */
+.contHero {
+    right: -65px;
+    top: 0;
+}
+.contHero img{
+    width: 450px;
+}
+.cntctHd h2 {
+    font-size: 35px;
+}
+.address h2 {
+    font-size: 23PX;
+}
+.Cntct-Form h2 {
+    font-size: 23px;
+}
+/* QUOTE */
+.DescRow{
+    display: block;
+  }
+  .dscrption{
+    width: 100%;
+  }
+  .PrDesc::before{
+    display: none;
+  }
+  .DescSec {
+    justify-content: left;
+    gap: 15px;
+}
+.PrDesc{
+    margin-top: 20px;
+}
+/* CLIENT */
+.ClntDiv:after {
+    width: 450px;
+
+}
+}
+
+@media(max-width:1350px){
+    .PrntImage img {
+        width: 354px;
+    }
+    .sustain img {
+        margin-bottom: -120px;
+    }
+}
+
+/* extra added */
+@media screen and (min-width:999px) and (max-width:1024px){
+.PrnServ1 p{
+    width: 280px;
+}
+}
+@media screen and (min-width:1024px) and (max-width:1367px){
+    .heroSection {
+        padding-left: 35px;
+    }
+    .heroTxt h1 {
+        font-size: 45px !important;
+        line-height: 42px !important;
+    }
+    .manImg {
+        right: 23px !important;
+    }
+    .manImg img {
+        width: 310px !important;
+    }
+    .Prev {
+        left: -25px; 
+      }
+      .Next {
+        right: -25px;
+      }
+    .Prev, .Next {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .PrntrDesc {
+        width: 130px;
+        height: 130px;
+    }
+    .PrntrDesc img {
+        width: 50px;
+        height: 50px;
+    }
+    .PrntrDesc p {
+        font-size: 15px !important;
+    }
+    /* PRODUCT */
+    .thumbImg {
+        margin: 5px ;
+      }
+      /* SERVICES */
+      .ServtTxt{
+        max-width: 370px;
+        display: block;
+        margin: auto;
+      }
+   .servRow::after{
+    display: none;
+   }
+   .BrefDesc {
+    padding: 20px 11px;
+}
+.ClntDiv:after{
+    width: 532px; 
+}
+
+.eco h3 {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+
+.echoPrntSec {
+    padding: 10px 46px;
+}
+.ecoCnt p {
+    font-size: 16px;
+}
+.FtrCol li a{
+    font-size: 14px;
+}
+
+.PrntrDesc{
+    width: 120px !important;
+    height: 120px !important;
+   }
+
+   .servRow {
+    gap: 14px;
+   }
+
+   .crtQuote{
+        padding: 14px 8px;
+   }
+
+   .calc p{
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    line-height: 20px;
+    padding-top: 5px;
+    font-size: 16px;
+    line-height: 19px;
+   }
+
+   .ServTxt h2{
+    font-size: 33px;
+   }
+   .Ab-head h2{
+    font-size: 33px;
+   }
+   .AbTxt p{
+  padding-bottom: 15px;
+  line-height: 1.5;
+} 
+.AbHro-txt h1 span{
+    text-transform: none;
+    font-size: 25px;
+  }
+  .FtrCol p{
+    font-weight: 300 ;
+    font-size: 16px;
+  }
+  .Qut-cnt {
+    padding-top: 30px;
+    padding-left: 37px;
+    padding-right: 40px;
+}
+
+}
+
+@media (max-width:999px){
+    .eco h3 {
+        font-size: 19px;
+    }
+    .ecoCnt p {
+        font-size: 17px;
+    }
+
+    .container {
+        max-width: 900px;
+    }
+    .contact{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+      }
+
+    .mainMenu{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #f55e0d;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(10%);
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        overflow-y: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mainMenu.show{
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .mainMenu ul{
+        width: 100%;
+        display: block;
+        text-align: center;
+        /* margin-top: 120px; */
+      }
+      .mainMenu ul li{
+        padding: 15px 0;
+        display: block;
+      }
+      .mainMenu ul li a{
+        font-size: 23px;
+        color: #fff;
+      }
+
+      .subMenu{
+        background-color: black;
+      }
+      .subMenu1{
+        background-color: black;
+      }
+
+
+      .sustain img {
+        margin-bottom: -80px;
+    }
+
+
+      .mainMenu ul li a:hover{
+        color: #fff;
+      }
+      .toggle{
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 72px;
+      }
+      .toggle span{
+        transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+       
+    }
+    .toggle.open span{
+        background-color: #fff !important;
+    }
+    .toggle.open span:nth-child(2){
+        width: 0;
+  
+    }
+    .toggle.open span:nth-child(1){
+        transform: rotate(45deg) translate(7px, 5px);
+    }
+    .toggle.open span:nth-child(3) {
+        transform: rotate(-46deg) translate(9px, -7px);
+    }
+.hero-Container {
+    padding-top: 120px;
+}
+    .heroSection {
+        padding-left: 25px;
+    }
+    .heroTxt h1 {
+        line-height: 38px;
+    }
+    .heroTxt p {
+        /* max-width: 100%;  */
+        font-size: 18px;
+    }
+    .heroTxt h1 {
+        font-size: 34px;
+    }
+    .manImg {
+        right: 10px;
+    }
+    .manImg img {
+        width: 300px;
+    }
+    
+    .PrntSlider img {
+    width: 277px;
+    height: auto;
+    margin: auto;
+}
+    .PrntrDesc {
+        width: 130px;
+        height: 130px;
+    }
+    .PrntrDesc p {
+        font-size: 14px;
+    }
+    .PrntrDesc img {
+        width: 50px;
+        height: 50px;
+    }
+    .PrntrServ {
+        display: block;
+      
+    }
+    .PrntrServ img {
+        width: 233px;
+        margin-bottom: 24px;
+    }
+    .ServTxt h2 {
+        max-width: 100%;
+        font-size: 32px;
+    }
+    .ServList h2 {
+        font-size: 32px;
+    }
+    .PrntList p {
+        font-size: 18px;
+
+    }
+    .Prev {
+        left: -14px; 
+      }
+      .Next {
+        right: -14px;
+      }
+      .Prev, .Next {
+        /* display: none; */
+        width: 20px;
+        height: 20px;
+    }
+      .PrcCnt h2 {
+        font-size: 35px;
+    }
+    .PrcCnt p {
+        font-size: 17px;
+    }
+    .AddTxt h3 {
+        font-size: 17px;
+    }
+    .AddTxt h3 span {
+        font-size: 17px;
+    }
+
+    .col-40{
+        width: 50%;
+        padding: 30px;
+      }
+      .col-20{
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        padding: 30px ;
+      }
+      .AbtRow{
+          justify-content: center;
+      }
+      .AbtRow::after {
+        display: none;
+    }
+  
+    /* ABOUT STYLE */
+    .ABHero {
+        background-position: left;
+    }
+    .AbHroImg img {
+        width: 270px;
+    }
+   
+
+    .AbtImg {
+        width: 450px;
+        height: 500px;
+    }
+    .mvRow img {
+        display: block;
+        margin: 15px 0;
+    }
+    .Ab-head{
+        max-width: 390px;
+      }
+      .Ab-head h2{
+        font-size: 39px;
+      }
+      /* CONTACT STYLE */
+      .contHero {
+        right: -65px;
+        top: 0;
+    }
+    .contHero img{
+        width: 450px;
+    }
+    .CTCntnt{
+        padding: 0 0;
+      }
+      .Cntct-Form{
+        margin-top: 20px;
+      }
+     
+      /* CLIENT */
+      .ClntDiv:after {
+        width: 350px;
+    
+    }
+    .valuedClnts .row{
+        display: flex;
+        justify-content: center;
+      }
+          /* SERVICES */
+          .ServtTxt{
+            max-width: 370px;
+            display: block;
+            margin: auto;
+          }
+       .servRow::after{
+        display: none;
+       }
+       .BrefDesc {
+        padding: 20px 11px;
+    }
+}
+
+@media (min-width: 999px) {
+    .drpDwn1:hover .subMenu1,
+    .drpDwn:hover .subMenu {
+      display: block !important;
+    }
+  }
+/* Example mobile dropdown logic */
+@media (max-width: 999px) {
+    .mainMenu .drpDwn.open .subMenu,
+    .mainMenu .drpDwn1.open .subMenu1 {
+      display: block !important;
+      position: relative;
+    }
+  
+    .subMenu, .subMenu1 {
+      display: none !important;
+    }
+
+    .drpDwn:hover .subMenu1,
+    .drpDwn:hover .subMenu {
+        display: none !important;
+    }
+    .beforeLogo{
+        /* margin-left: -15px; */
+    }
+  }
+  
+
+
+@media (max-width:770px){
+
+    .productCardHead{
+        margin-top: 15px;
+    }
+
+    .manImg {
+        display: none;
+    }
+    .eco{
+        border-right: none;
+       }
+       .ecoCnt p {
+        margin-top: 5px;
+    }
+    .AbtRow {
+    gap:25px;
+    }
+
+    .heroTxt{
+        margin-left: 130px;
+    }
+
+    .toggle {
+        right: -10px;
+    }
+    .contact{
+        display: none;
+      }
+    .heroSection {
+        padding-left: 0;
+        padding: 40px;
+    }
+    .heroRow {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .heroTxt p {
+        max-width: 100%;
+        font-weight: 700;
+    }
+    
+        .heroTxt {
+            width: 100%;
+        }
+        .heroSldr{
+            width: 100%;
+           margin-bottom: 15px;
+         }
+       
+         .PrntSlider img {
+            width: 500px;
+            height: auto;
+            margin: 10px;
+        }
+    .PrcLst-contain .col-md-6{
+        margin: 60px 0;
+    }
+    .sliderSec {
+        width: 100%;
+        max-width: 500px; /* Adjust as needed */
+        height: auto; 
+        overflow: hidden;
+        margin-top: 30px;
+      }
+      .PrntrServ {
+        border-right: 0;
+    }
+    .ServList{
+        margin-top: 30px;
+    }
+    .desc {
+        width: 320px;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .PrImage {
+        width: 300px !important;
+    }
+   /* ABOUT STYLE */
+   .AbHroImg img {
+    display: none;
+}
+/* CONTACT STYLE */
+.contHero img{
+    display: none;
+}
+    
+/* QUOTE*/
+.tab::after{
+    width: 90%;
+  }
+.quteFrm{
+    padding: 0 20px ;
+  }
+.TxtQut{
+    width: 100%;
+  }
+  .PrntImage img {
+    width: 350px;
+}
+  .DescSec {
+    display: block;
+    gap: 15px;
+}
+.prnImg {
+    height: 95px;
+    padding: 0 23px;
+}
+.prnImg img {
+    width: 86px;
+}
+.TabImg h3 {
+    font-size: 17px;
+}
+.DescList {
+    width: 350px;
+}
+.sndBtns{
+    display: block;
+}
+.btnSnd{
+    margin-bottom: 10px;
+}
+.btnSnd a{
+    margin: auto;
+}
+.volume {
+    padding: 15px 23px;
+}
+.volume h3 {
+    font-size: 20px;
+}
+/* CLIENT */
+.ClntDiv:after {
+    display: none;
+}
+.ClntSec{
+    margin: 10px 0;
+}
+/* SERVICES */
+.ServTxt {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ServContainer{
+    text-align: center;
+}
+
+.seamless{
+    padding-right: 10px !important;
+}
+
+
+.AddTxt h3{
+    color: #fff;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .AddTxt h3 span{
+    font-size: 15px;
+    color: #d6e84e;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width:662px){
+    .desc {
+        width: auto;
+    }
+    .heroSection {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .PrntSlider div:first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* optional: vertical centering */
+      }
+    .PrntSlider img {
+        width: 450px;
+        height: auto;
+        margin: 10px;
+    }
+    .logo img{
+        width: 185px;
+    }
+    .sliderSec {
+        width: 100%;
+        max-width: 100%; /* Adjust as needed */
+        height: auto; 
+        overflow: hidden;
+        margin-top: 30px;
+      }
+    .manImg {
+        display: none;
+    }
+    .PrdctHead h2 {
+        font-size: 35px;
+    }
+.PrdctHead p {
+    font-size: 16px;
+
+}
+.PrcCnt h2 {
+    font-size: 31px;
+}
+.PrcCnt p {
+    font-size: 16px;
+}
+.col-40 {
+    width:100%;
+}
+.col-20 {
+    width:100%;
+    justify-content: start;
+    padding: 30px;
+}
+/* ABOUT STYLE */
+.AbtImg {
+    width: 100%;
+    height: 100%;
+}
+/* QUOTE */
+.prntVolm{
+    display: block;
+}
+.volume{
+    margin-bottom: 10px;
+}
+.btnSnd a{
+    width: 100%;
+}
+
+.ResTab{
+    display: block !important;
+    margin: auto;
+  }
+  .ResTab button {
+    /* width: 300px; */
+    background-color: inherit;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 0;
+    transition: 0.3s;
+    font-size: 17px;
+    border: 1px solid #a9a9a9;
+    border-bottom: none;
+    background-color: #e3e3e3;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .ResTab button:hover {
+    background-color: #ddd;
+  }
+  .ResTab button.show {
+    background-color: #fff;
+  }
+  .prnImg img{
+    width: 100px;
+    display: block;
+    margin: auto;
+  }
+}
+
+@media (max-width: 662px) {
+    .desc {
+        width: auto;
+    }
+
+    
+    .heroSection {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .heroTxt{
+        margin-top: -50px;
+    }
+    .PrntSlider div:first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* optional: vertical centering */
+      }
+
+      
+    .PrntrServ div:first-child{
+        text-align: center;
+    }
+
+    .PrntSlider {
+        gap: 20px;
+    }
+
+    .ServList{
+        text-align: left;
+    }
+
+
+    .heroTxt {
+        margin-left: 30px;
+    }
+
+      
+}
+
+@media(max-width:600px){
+
+    .DetlList{
+        display: block;
+    }
+    .DescList{
+        width: 100%;
+    }
+    .crtQuote{
+        padding: 14px 6px !important;
+    }
+
+    .crtQuote img {
+        width: 24px !important;
+    }
+
+    .calc p {
+        text-align: center;
+        color: #fff;
+        font-weight: 300;
+        line-height: 14px;
+        padding-top: 2px;
+        font-size: 13px;
+    }
+
+}
+
+@media(max-width:500px){
+    .heroSection {
+        padding: 40px 20px;
+        text-align: center;
+    }
+    .PrntSlider div:first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* optional: vertical centering */
+      }
+    .PrdctTxt h1 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .PrdctTxt h1 span{
+        font-size: 25px;
+    }
+
+    .echoPrntSec{
+
+        text-align: center;
+    }
+
+    .eco{
+        flex-direction: column;
+        gap: 5;
+    }
+    
+    .desc{
+        text-align: center;
+    }
+    /* ABOUT STYLE */
+    .mvSection {
+        padding: 21px;
+        text-align: center;
+    }
+    .mvRow div:first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* optional: vertical centering */
+      }
+    .listdetails{
+        text-align: center;
+      }
+    .aboutSahara h2 {
+        font-size: 26px;
+    }
+    .mvRow h2 {
+        font-size: 30px;
+    }
+
+    .mvRow img{
+        width: 75%;
+    }
+
+    .FtrContain{
+        padding: 30px;
+        letter-spacing: 1px;
+
+    }
+
+    .aboutSahara ul li {
+        padding: 8px 0 8px 0px;
+    }
+
+    .iconImg {
+        margin-bottom: 13px;
+    }
+
+    /* CONTACT STYLE */
+    .cntctHd h2 {
+        font-size: 33px;
+    }
+    .locIcon {
+        width: 70px;
+    }
+    .locIcon img {
+        width: 34px;
+    }
+    .circle {
+        width: 40px;
+        height: 40px;
+    }
+    .mobile img{
+        width: 15px !important;
+    }
+    .circle img{
+        width: 20px;
+    }
+    .options {
+        gap: 10px;
+    }
+    .options h3 {
+        font-size: 17px;
+    }
+    /* QUOTE */
+    .quteFrm{
+        padding: 30px 0 0;
+      }
+    /* SERVICES */
+    .PrntrBrefDesc {
+        display: block;
+    }
+    .BrefDesc{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-left: 0;
+    }
+    
+    .IcnImg:last-child{
+        border-right:none;
+    }
+    .IcnImg p{
+        font-size: 16px;
+      }
+
+
+      .ecoCnt p {
+        font-size: 12px;
+        margin-bottom:10px;
+    }
+
+    .PrntrServ div:first-child{
+        text-align: center;
+    }
+    .seamless{
+        padding-right: 10px !important;
+    }
+    .upperServ{
+        text-align: center;
+    }
+
+    .calc p{
+        line-height: 14px !important;
+    }
+
+    .desc p{
+        font-size: 16px;
+    }
+
+    .BoxTxt{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    }
+    .enquiry a {
+        padding: 10px 60px;
+    }
+
+    .logoDiv{
+       margin: 10px;
+    }
+
+    .col-20{
+        margin-left:0 ;
+    }
+}
+
+@media (max-width:400px){
+    .toggle {
+        top: 42%;
+    }
+    .hdrContain.scrolled .logo img {
+        width: 170px;
+    }
+    .hdrContain.scrolled .row {
+        align-items: center !important;
+        padding: 10px 0px;
+    }
+    .hero-Container {
+        padding-top: 105px;
+    }
+    .heroSection {
+        padding: 40px 20px;
+    }
+    .logo img{
+        width: 170px !important;
+    }
+    .heroTxt h1 {
+        font-size: 27px;
+    }
+    .heroTxt p {
+        font-size: 16px;
+    }
+    .PrntrServ img {
+        width: 204px;
+    }
+    .desc {
+        width: 100%;
+        margin-top: 10px;
+        text-align: left;
+    }
+    .PrntSlider img{
+        width: 215px;
+    }
+    
+    .ServTxt h2 {
+        font-size: 27px;
+    }
+    .PrdctHead h2 {
+        font-size: 28px;
+    }
+
+.BoxTxt h3 {
+    padding: 6px 10px;
+    font-size: 19px;
+}
+.ServList h2 {
+    font-size: 27px;
+}
+.ServContainer {
+    padding: 40px 20px;
+    text-align: center;
+}
+.seamless{
+    padding-right: 10px !important;
+}
+.SrvCnt{
+ text-align: left;
+}
+.PrntList {
+    gap: 10px;
+}
+.col-40 {
+    padding: 0;
+}
+.col-20 {
+    margin-top: 20px;
+    padding: 0;
+    margin-left: 20px;
+}
+.FtrLogo img {
+    width: 200px;
+}
+.FtrCol p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.FtrCol h3 {
+    font-size: 22px;
+}
+.FtrCol li a {
+    font-size: 16px;
+}
+/* ABOUT STYLE */
+.AbHro-txt h1 {
+    font-size: 24px;
+}
+.AbHro-txt h1 span {
+    font-size: 22px;
+}
+.Ab-head {
+    max-width: 301px;
+}
+.Ab-head h2 {
+    font-size: 28px;
+}
+.aboutSahara h2 {
+    font-size: 24px;
+}
+
+/* CONTACT STYLE */
+.cntctHd h2 {
+    font-size: 28px;
+}
+.address h2 span {
+    font-size: 21px;
+}
+.address h2 {
+    font-size: 20PX;
+}
+.Cntct-Form h2 {
+    font-size: 20px;
+}
+.address p {
+    font-size: 16px;
+}
+.options {
+    gap: 18px;
+}
+.number{
+    max-width: 170px;
+}
+.input-box input::placeholder{
+    font-size: 16px;
+  }
+  .input-box textarea::placeholder{
+    font-size: 17px;
+  }
+/* QUOTE */
+.qute-head h2 {
+    font-size: 22px;
+}
+.btnSnd a {
+    padding: 12px 0px;
+    gap: 5px;
+    font-size: 18px;
+}
+.recmnd {
+    padding: 30px 10px;
+}
+/* CLIENT */
+.ClntSec h2 {
+    font-size: 29px;
+}
+.ClntSec h3 {
+    font-size: 23px;
+}
+/* PRODUCT */
+.partImgSlider img {
+    width: 100%;
+  }
+  .enquiry a {
+    padding: 10px 60px;
+}
+}
+
+@media (max-width:380px){
+    .thumbImg {
+        width: 85px !important;
+        height: 85px !important;
+
+    }
+
+}
+
+
+/* PRIVACY POLICY */
+.prvcy-contain h3 {
+    font-size: 23px;
+}
+.prvcy_list p {
+    font-size: 17px;
+}

@@ -1,0 +1,132 @@
+/* Admin Dashboard Container */
+.admin-dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar Styles */
+.admin-sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 100vh;
+}
+
+.admin-sidebar-collapsed {
+  width: 60px;
+}
+
+.admin-sidebar-logo {
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-logo-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.admin-sidebar-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.admin-sidebar-nav {
+  padding: 15px 0;
+}
+
+.admin-sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-sidebar-item {
+  margin: 5px 0;
+}
+
+.admin-sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.admin-sidebar-link:hover {
+  background-color: #34495e;
+}
+
+.admin-sidebar-active .admin-sidebar-link {
+  background-color: #3498db;
+  border-left: 3px solid #fff;
+}
+
+.admin-sidebar-icon {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.admin-sidebar-text {
+  white-space: nowrap;
+  color: white;
+}
+
+/* Main Content Styles */
+.admin-main-content {
+  flex: 1;
+  background-color: #f5f6fa;
+}
+
+.admin-content-header {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header-title {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.admin-content-area {
+  padding: 20px;
+  min-height: calc(100vh - 80px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 60px;
+  }
+  
+  .admin-sidebar-text {
+    display: none;
+  }
+  
+  .admin-sidebar-collapsed {
+    width: 0;
+    overflow: hidden;
+  }
+  
+  .admin-sidebar-toggle {
+    position: absolute;
+    right: -40px;
+    top: 20px;
+    background: #2c3e50;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+  }
+}

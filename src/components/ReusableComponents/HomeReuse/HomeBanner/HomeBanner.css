@@ -1,0 +1,63 @@
+
+   .primaryBtn{
+    margin-top: 30px;
+   }
+
+  .desc p{
+    max-width: 400px;
+    margin: auto;
+    font-weight: 200;
+  }
+
+  .firstHead h1 {
+    font-family: 'impact'; 
+  }
+
+  .firstHead h1{
+    font-size: 45px;
+}
+
+/* .PrnServ1 p {
+    font-family: 'Poppins', sans-serif !important;
+} */
+
+
+.firstHead h1 {
+    letter-spacing: 1.2px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 53px;
+    word-spacing: 4px;
+    margin-bottom: 20px;
+    background: linear-gradient(to top, #021E76 0%, #0132CF 100% );
+    /* color: black; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+@media screen and (min-width:1024px) and (max-width:1350px){
+    .heroSection {
+      padding-left: 35px;
+  }
+  .heroTxt h1 {
+    font-size: 38px;
+}
+.manImg {
+  right: 23px;
+}
+.manImg img {
+  width: 310px;
+}
+.heroTxt h1 {
+  font-size: 38px;
+}
+
+   }
+
+   @media (max-width:770px){
+   
+    .hero-Container {
+      padding-top: 120px;
+  }
+   }

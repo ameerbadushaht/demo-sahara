@@ -1,0 +1,390 @@
+.MobileHeader-hdr-contain{
+    position: fixed;
+    z-index: 22;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.MobileHeader-container{
+    padding: 0 20px;
+}
+.MobileHeader-dropdown-arrow {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-left: 5px !important;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+/* .MobileHeader-dropdown-arrow::after {
+    content: '\f107';
+} */
+.MobileHeader-hdr-contain.MobileHeader-scrolled{
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #ccc;
+    transition: all 0.3s;
+}
+.MobileHeader-hdr-contain.MobileHeader-scrolled .MobileHeader-hdrrow{
+    padding: 10px 0;
+    transition: all 0.3s;
+}
+.MobileHeader-hdr-contain.MobileHeader-scrolled .MobileHeader-logo img{
+    width: 80px;
+    transition: all 0.3s;
+}
+.MobileHeader-hdr-contain.MobileHeader-scrolled .MobileHeader-toggle{
+    top: 35px;
+}
+
+.MobileHeader-hdr-contain .topbar {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 14px;
+    background-color: #333f97;
+}
+
+
+
+.MobileHeader-hdrrow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px;
+    margin: 0 -20px;
+}
+.MobileHeader-logo img{
+    width: 120px;
+    transition: all 0.3s;
+}
+.MobileHeader-button:hover{
+    background-color: #025248;
+    color: #fff;
+}
+.MobileHeader-fnd-btn{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.MobileHeader-button{
+    background-color: #fff;
+    padding: 10px 29px;
+    border-radius: 50px;
+    transition: all 0.3s
+}
+.MobileHeader-button a{
+    color: var(--text-color);
+    font-weight:700;
+    font-size: 15px;
+}
+
+.MobileHeader-call-icon img{
+    width: 20px;
+}
+.MobileHeader-mainMenu ul{
+    display: flex;
+}
+.MobileHeader-mainMenu li{
+    padding: 0 10px;
+    list-style-type: none;
+}
+.MobileHeader-mainMenu li a{
+    font-family: var(--aileron);
+    font-weight: 400;
+}
+.MobileHeader-toggle{
+    position: relative;
+    display: none;
+}
+.MobileHeader-toggle span{
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #f4f4f4;
+    margin: 6px 0;
+}
+
+.MobileHeader-togglerlogo img{
+    display: none;
+}
+
+@media screen and (max-width:999px){
+    .MobileHeader-mainMenu a{
+        color: #ffffff !important;
+        font-size: 26px !important;
+    }
+    .MobileHeader-toggle{
+        display: block ;
+        z-index: 222;
+        margin-left: 24px;
+        position: absolute;
+        right: 30px;
+        top: 46px;
+    }
+
+    .MobileHeader-toggle span{
+        display: block;
+        width: 30px;
+        height: 5px;
+        background-color: #000000;
+        margin: 6px 0;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .MobileHeader-toggle.MobileHeader-open span:nth-child(1){
+        transform: translate(0px, 11px) rotate(45deg);
+        background-color: #ffffff;
+    }
+    .MobileHeader-toggle.MobileHeader-open span:nth-child(3){
+        transform: translate(0px, -11px) rotate(-45deg);
+        background-color: #ffffff;
+    }
+    .MobileHeader-toggle.MobileHeader-open span:nth-child(2){
+        width:0;
+    }
+    .MobileHeader-fnd-btn {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-right: 46px;
+    }
+    .MobileHeader-menuSec{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        background-color: #fff;
+        top: 0;
+        left: 0;
+        z-index: 22;
+        transition: all 0.3s;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    .MobileHeader-menuSec.MobileHeader-show{
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+        background-color: #f55e0d;
+    }
+
+    .MobileHeader-mainMenu ul {
+        display: block ;
+        text-align: center;
+        margin-top: 100px;
+        padding-left: 50px;
+    }
+    .MobileHeader-mainMenu li{
+        margin-bottom: 18px;
+        padding: 10px 0;
+    }
+    .MobileHeader-mainMenu li a{
+        font-size: 30px;
+        font-weight: 600;
+        
+    }
+    .MobileHeader-serv-SubList .MobileHeader-angle-right i{
+        transform: rotate(90deg);
+    }
+    .MobileHeader-serv-subMenu, .MobileHeader-angle-right i{
+        display: none;
+    }
+}
+
+@media (max-width:600px){
+    .MobileHeader-togglerlogo img{
+        display: block;
+        width: 80px;
+        margin-top: 30px;
+        margin-left: 21px;
+    }
+    .MobileHeader-menuSec{
+        height: 100vh;
+    }
+
+    .MobileHeader-mainMenu a{
+        font-size: 20px !important;
+    }
+
+    .MobileHeader-mainMenu ul {
+        text-align: left;
+        /* margin-top: 60px;
+        padding-left: 30px; */
+    }
+}
+
+.MobileHeader-hasSub {
+    position: relative;
+}
+
+.MobileHeader-subMenu a {
+    color: #ffffff !important;
+    padding: 10px;
+    display: block;
+    transition: all 0.3s;
+}
+
+.MobileHeader-subMenu a:hover {
+    color: var(--primary-color) !important;
+}
+
+@media (min-width: 992px) {
+    .MobileHeader-subMenu {
+        position: absolute;
+        width: 280px;
+        background-color: #fff;
+        border-radius: 4px;
+        top: 24px;
+        opacity: 0;
+        padding-top: 8px;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: block !important;
+        padding-bottom: 7px;
+    }
+    
+    .MobileHeader-hasSub:hover .MobileHeader-subMenu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .MobileHeader-serv-subMenu {
+        position: absolute;
+        width: 250px;
+        background-color: #fff;
+        border-radius: 4px;
+        top: 15px;
+        left: 250px;
+    }
+    
+    .MobileHeader-serv-SubList:hover .MobileHeader-serv-subMenu {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media (max-width: 991px) {
+    .MobileHeader-subMenu {
+        display: none;
+        width: 100%;
+        padding-left: 0;
+        transition: max-height 0.3s ease-in-out;
+    }
+   
+    .MobileHeader-serv-subMenu {
+        display: none;
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .MobileHeader-subMenu {
+        margin-top: 20px !important;
+    }
+
+    .MobileHeader-subMenu li{
+        margin-bottom: 0 !important;
+        padding: 4px !important;
+    }
+  
+    .MobileHeader-hasSub.MobileHeader-open .MobileHeader-dropdown-arrow {
+        transform: rotate(-180deg);
+    }
+}
+
+.MobileHeader-hasSub.MobileHeader-open .MobileHeader-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.MobileHeader-serv-SubList {
+    position: relative;
+}
+.MobileHeader-angle-right{
+    position: absolute;
+    right:50px;
+}
+.MobileHeader-serv-subMenu a {
+    color: #000 !important;
+    padding: 10px;
+    display: block;
+    transition: all 0.3s;
+}
+
+.MobileHeader-serv-subMenu a:hover {
+    color: var(--primary-color) !important;
+}
+
+@media (max-width:1350px){
+    .MobileHeader-serv-subMenu {
+        left: -250px;
+    }
+}
+
+.MobileHeader-mainUl li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+
+.MobileHeader-mainUl li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease-in-out;
+}
+
+.MobileHeader-mainUl li a:hover::after {
+    width: 100%;
+}
+
+.MobileHeader-subMenu a{
+    border-bottom: 1px solid #ccc;
+}
+
+.MobileHeader-custSpprt{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.MobileHeader-ladyImg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+    background-color: #ffff;
+}
+.MobileHeader-ladyImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.MobileHeader-CustTxt p{
+    color: #ffffff;
+}
+
+.MobileHeader-call-icon img{
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .MobileHeader-CustTxt p {
+        font-size: 11px;
+    }
+    .MobileHeader-call-icon img{
+        display: block !important;
+    }
+    .MobileHeader-custSpprt {
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .MobileHeader-button{
+        font-size: 13px;
+    }
+}

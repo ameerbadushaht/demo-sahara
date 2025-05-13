@@ -796,6 +796,7 @@
 
     .ServList{
         text-align: left;
+       
     }
 
 
@@ -971,7 +972,9 @@
     .calc p{
         line-height: 14px !important;
     }
-
+    .ServList{
+       margin-right: 40px;
+    }
     .desc p{
         font-size: 16px;
     }

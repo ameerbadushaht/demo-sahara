@@ -23,7 +23,7 @@ function MobileHeader() {
         <div className="MobileHeader-container">
           <div className="MobileHeader-hdrrow">
           <div className="col-md-3 beforeLogo">
-            <div className="logo">
+            <div className="MobileHeader-logo">
               <a href="/">
                 <img src="/logo.svg" alt="Company Logo" />
               </a>

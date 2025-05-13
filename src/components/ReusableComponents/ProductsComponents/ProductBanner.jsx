@@ -24,9 +24,10 @@ function ProductBanner() {
 
       const images = [
         "/assets/Product/PrntrPart.png",
-        "/assets/Product/PrntrPart1.png",
-        "/assets/Product/PrntrPart2.png",
-        "/assets/Product/PrntrPart4.png"
+        "/assets/Product/img1.jpg",
+        "/assets/Product/img2.jpg",
+        "/assets/Product/img4.jpg",
+        "/assets/Product/img3.jpg"
     ];
   
 
@@ -40,14 +41,16 @@ function ProductBanner() {
     };
 
     const thumbSliderSettings = {
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         dots: false,
         focusOnSelect: true,
         infinite: false,
         asNavFor: nav1,
         responsive: [
+            { breakpoint: 1324, settings: { slidesToShow: 4 } },
             { breakpoint: 1024, settings: { slidesToShow: 4 } },
+            { breakpoint: 920, settings: { slidesToShow: 3 } },
             { breakpoint: 500, settings: { slidesToShow: 3 } },
             // { breakpoint: 350, settings: { slidesToShow: 2 } },
           

@@ -28,7 +28,7 @@
     transition: all 0.3s;
 }
 .MobileHeader-hdr-contain.MobileHeader-scrolled .MobileHeader-logo img{
-    width: 80px;
+    /* width: 80px; */
     transition: all 0.3s;
 }
 .MobileHeader-hdr-contain.MobileHeader-scrolled .MobileHeader-toggle{
@@ -53,7 +53,7 @@
     margin: 0 -20px;
 }
 .MobileHeader-logo img{
-    width: 120px;
+    width: 185px;
     transition: all 0.3s;
 }
 .MobileHeader-button:hover{

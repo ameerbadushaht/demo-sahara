@@ -126,6 +126,11 @@
     text-align: center;
     
   }
+
+  /* .slick-initialized .slick-slide{
+    display: flex;
+    justify-content: center;
+  } */
   
  .heroSection{
   background-image: url('../assets/Home/heroBnr1.jpg');

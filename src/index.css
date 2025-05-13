@@ -11,13 +11,13 @@
 
 @font-face {
     font-family: 'impact';
-    src: url('/fonts/impact.ttf') ;
+    src: url(../assets/fonts/impact.ttf) ;
     
    
   }
 @font-face {
     font-family: 'impacted';
-    src: url('/fonts/impacted.ttf') ;
+    src: url(../assets/fonts/impacted.ttf) ;
     font-weight: normal;
     font-style: normal;
   }

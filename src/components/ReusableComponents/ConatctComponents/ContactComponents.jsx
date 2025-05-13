@@ -146,7 +146,7 @@ function ContactComponents() {
                                                 data-aos="fade-in"
                                                 data-aos-duration="1000"
                                             >
-                                                <div className="circle mobile">
+                                                <div className="circle ">
                                                     <img src="/assets/Contact/call.png" alt="" />
                                                 </div>
                                                 <div className="number">
@@ -158,7 +158,7 @@ function ContactComponents() {
                                                 data-aos="fade-in"
                                                 data-aos-duration="1000"
                                             >
-                                                <div className="circle">
+                                                <div className="circle mobile">
                                                     <img src="/assets/Contact/phone.png" alt="" />
                                                 </div>
                                                 <div>

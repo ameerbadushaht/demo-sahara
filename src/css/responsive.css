@@ -207,6 +207,12 @@
 }
 
 @media (max-width:999px){
+    .productCardDesc{
+        width: auto;
+    }
+    .FtrCol p{
+            width: auto;
+      }
     .eco h3 {
         font-size: 19px;
     }

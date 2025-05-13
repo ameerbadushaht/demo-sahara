@@ -544,7 +544,7 @@
   border-top-right-radius: 30px;
   text-align: center;
   margin: 0 10px;
-  padding:20px 15px;
+  padding:5px 15px;
   height: 480px !important;
 }
 .PrImg{
@@ -562,7 +562,7 @@
 .slider-Wrapper h3{
   margin-top: 10px;
   font-size: 22px;
-  height: 55px;
+  height: 60px;
   font-weight: 600;
   display: flex;
   align-items: center;

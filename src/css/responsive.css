@@ -490,9 +490,9 @@
     .drpDwn:hover .subMenu {
         display: none !important;
     }
-    .beforeLogo{
-        /* margin-left: -15px; */
-    }
+    /* .beforeLogo{
+        margin-left: -15px;
+    } */
    .manImg {
         display: none;
     }

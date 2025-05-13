@@ -33,11 +33,11 @@ function RequestSection() {
                             {/* <h2>Get Price Lists,<br/> Estimates and Quotations</h2> */}
                             <h2>Usage & Pricing Calculator</h2>
                             <p>Easily access price lists, estimates, and quotations to make informed decisions for your business needs.</p>
-                            <div className="getBtn"><a href="requestquote">Request now</a></div>
+                            <div className="getBtn"><a href="ProductEnquiry">Request now</a></div>
                         </div>
                     </div>
                     <div className="col-md-3">
-                        <a  href="ProductEnquiry" data-aos="fade-in" data-aos-duration="1000"><div className="addBnr">
+                        <a href="ProductEnquiry" data-aos="fade-in" data-aos-duration="1000"><div className="addBnr">
                             <img src="/assets/Home/AddBnr.png" alt=""/>
                         </div>
                         <div className="AddTxt">

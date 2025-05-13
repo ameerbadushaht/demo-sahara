@@ -30,7 +30,8 @@ function RequestSection() {
                     </div>
                     <div className="col-md-6">
                         <div className="PrcCnt" data-aos="fade-in" data-aos-duration="1000">
-                            <h2>Get Price Lists,<br/> Estimates and Quotations</h2>
+                            {/* <h2>Get Price Lists,<br/> Estimates and Quotations</h2> */}
+                            <h2>Usage & Pricing Calculator</h2>
                             <p>Easily access price lists, estimates, and quotations to make informed decisions for your business needs.</p>
                             <div className="getBtn"><a href="requestquote">Request now</a></div>
                         </div>

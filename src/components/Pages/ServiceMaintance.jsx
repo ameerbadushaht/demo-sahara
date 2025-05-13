@@ -18,8 +18,8 @@ function ServiceMaintance() {
 
    <ServiceMaintenanceBanner/>
    <ProducstsSlider/>
-<RequestSection/>
-<CompanySlider/>
+    <RequestSection/>
+    <CompanySlider/>
    </>
   )
 }

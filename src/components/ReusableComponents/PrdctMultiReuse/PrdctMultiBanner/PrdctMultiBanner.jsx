@@ -86,15 +86,17 @@ function PrdctMultiBanner() {
             <div className="container">
               <div className="ABHero">
                 <div className="AbHro-txt PrdctTxt" data-aos="fade-up" data-aos-duration="1000">
-                  <h1>{product.title}<br /><span>{product.productFullName}</span></h1>
+                  {/* <h1>{product.title}<br /><span>{product.productFullName}</span></h1> */}
+                  <h1>{product.title}</h1>
+                  {/* <h1><span>{product.productFullName}</span></h1> */}
                 </div>
-                <div className="AbHroImg">
-                  <img src="/assets/Product/PrMulti-Bnr.png" alt="" />
+                <div className="AbHroImg multiImg">
+                  <img src={product.img} alt="" />
                 </div>
               </div>
             </div>
           </section>
-    
+
           <section className="customers">
             <div className="container">
               <div className="OurClnts">
@@ -102,7 +104,8 @@ function PrdctMultiBanner() {
                   <div className="col-md-6">
                     <div className="ClntSec">
                       <div className="cmpny ClntDiv">Products</div>
-                      <h2>{product.description}</h2>
+                      {/* <h2>{product.description}</h2> */}
+                      <h2>Print, Scan, Copy—All in One, All for You.</h2>
                       <div className="ProductsSldr">
                         <Slider {...mainSliderSettings} ref={slider1} className="PartSlider">
                           {images.map((imgSrc, index) => (
@@ -139,13 +142,46 @@ function PrdctMultiBanner() {
                     <div className="ClntSec PrdctDetal ClntTopMarg">
                       <h3>{product.productFullName}</h3>
                       <p>{product.description}</p>
-                      <div className="PrList">
+                      {/* <div className="PrList">
                         {product.features && product.features.map((feature, idx) => (
                           <li key={idx}>
                             <strong>{feature.title}:</strong>{feature.detail}
                           </li>
                         ))}
-                      </div>
+                      </div> */}
+
+                  <div className="PrList">
+  {product.features && product.features.map((feature, idx) => (
+    <div key={idx}>
+      <div style={{ fontWeight: 'bold'}}>
+        {feature.title}:
+      </div>
+
+      {/\d+\.\s/.test(feature.detail) ? (
+        <ul style={{ paddingLeft: '1.2rem' }}>
+          {feature.detail.split(/\n+/).filter(line => line.trim()).map((line, i) => {
+            const match = line.match(/^(\d+\.\s*)([^–-]+)[–-]\s*(.*)/);
+            if (match) {
+              const [, , heading, text] = match;
+              return (
+                <li key={i}>
+                  <strong>{heading.trim()}</strong> – {text.trim()}
+                </li>
+              );
+            } else {
+              return <li key={i}>{line}</li>;
+            }
+          })}
+        </ul>
+      ) : (
+        <p style={{ marginLeft: '1rem' }}>{feature.detail}</p>
+      )}
+    </div>
+  ))}
+</div>
+
+
+
                     
                       <div className="enquiry">
                         <a href="/ProductEnquiry">Quick Enquiry</a>

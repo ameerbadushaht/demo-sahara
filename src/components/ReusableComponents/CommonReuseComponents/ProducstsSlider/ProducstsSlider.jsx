@@ -68,7 +68,7 @@ useEffect(() => {
         <div className="container">
           <div className="Fetr-prd">
             <div className="PrdctHead">
-              <h2 data-aos="fade-in" data-aos-duration="1000">Feature Products</h2>
+              <h2 data-aos="fade-in" data-aos-duration="1000">Featured Products</h2>
               <p data-aos="fade-in" data-aos-duration="1000">
                 Our cutting-edge machines are designed to deliver exceptional print quality and speed with advanced features and reliable performance.
               </p>
@@ -93,7 +93,7 @@ useEffect(() => {
                       <div className="PrImg" data-aos="fade-in" data-aos-duration="1000">
                         <img src={item.img} alt={item.title} />
                       </div>
-                      <div data-aos="fade-in" data-aos-duration="1000">
+                      <div className="PrTxt" data-aos="fade-in" data-aos-duration="1000">
                         <h3>{item.title}</h3>
                         <p>{item.description}</p>
                       </div>

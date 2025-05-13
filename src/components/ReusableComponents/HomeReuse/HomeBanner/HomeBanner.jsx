@@ -36,9 +36,9 @@ function HomeBanner() {
                     
                         <div className="PrnServ1">
                             <p>
-                            Seamless printing solutions that let you focus on your core operations, with no IT headaches,
-                            flexible no-exit-free agreements, premium service at competitive prices and
-                            rental plans tailored to your needs.
+                            Seamless printing that let you focus on your core business — with zero IT
+                            headaches, cancel-anytime plans, no exit fees or hidden charges, premium
+                            service at competitive prices, and rental plans tailored to your needs.
                             </p>
                             <div className="primaryBtn2"><a href="/service">Explore</a></div>
                         </div>

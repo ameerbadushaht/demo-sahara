@@ -18,9 +18,12 @@ function HomeProductCard() {
 
                             <div className="BoxTxt" data-aos="fade-in" data-aos-duration="1000">
                                 <h3 className="seamless">your partner in seamless</h3>
-                                <h3>printers rental solutions!</h3>
+                                <h3>printer rental solutions! </h3>
                             </div>
-                            <p>We are one of the leading companies in UAE providing Managed print service / pay per print agreement. We will take care all your office document printing headaches such as printer breakdown, low toner, device repair, device replacement and device upgradation etc.</p>
+                            <p>We are one of the leading companies in UAE providing Managed print service / pay
+                                per print agreement. We will take care of all your office document printing
+                                headaches such as printer breakdown, low toner, device repair, device
+                                replacement and device upgradation etc. </p>
                             
                             {/* <div className="ViewMoreBtn" ><a href="/aboutus">Explore</a></div> */}
                         </div>

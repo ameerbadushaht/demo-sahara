@@ -17,11 +17,15 @@ function Footer() {
                             <div data-aos="fade-in" data-aos-duration="1000"><p>Trusted provider of office equipment solutions in the UAE, specializing in printer rentals, managed print services, and document management solutions. With a commitment to quality and customer satisfaction</p></div>
                             <div  className="medias" data-aos="zoom-in" data-aos-duration="1000">
                                 <div className="MdIcons"><a href="https://www.facebook.com/saharaedoc"><i className="fa-brands fa-facebook-f"></i></a></div>
-                                <div className="MdIcons"><a href=""><i className="fa-brands fa-x-twitter"></i></a></div>
+                                {/* <div className="MdIcons"><a href=""><i className="fa-brands fa-x-twitter"></i></a></div> */}
                                 <div className="MdIcons"><a href="https://www.instagram.com/sahara_office_equipments?igsh=MWw3ZXljbDBwNDlybQ=="><i className="fa-brands fa-instagram"></i></a></div>
                                 <div className="MdIcons"><a href="https://www.linkedin.com/company/sahara-office-equipment-trading-llc--sharjah/"><i className="fa-brands fa-linkedin"></i></a></div>
-                                <div className="MdIcons"><a href=""><i className="fa-brands fa-youtube"></i></a></div>
-                                <div className="MdIcons"><a href=""><i className="fa-brands fa-whatsapp"></i></a></div>
+                                {/* <div className="MdIcons"><a href=""><i className="fa-brands fa-youtube"></i></a></div> */}
+                                <div className="MdIcons">
+                                <a href="https://wa.me/971501234567" target="_blank" rel="noopener noreferrer">
+                                    <i className="fa-brands fa-whatsapp"></i>
+                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -66,7 +70,7 @@ function Footer() {
 
                 </div>
             </div>
-            <div className="Copy"><p>&copy; 2025 www.saharaprinter.com</p></div>
+            <div className="Copy"><p>&copy; 2025 Sahara Office Equip. TR. LLC</p></div>
         </div>
     </footer>
     

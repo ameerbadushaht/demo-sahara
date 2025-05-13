@@ -73,6 +73,14 @@ function PrdctMultiBanner() {
 
   return (
     <>
+    <div className="Contact">
+                    <div className="crtQuote">
+                        <div className="calc" data-aos="fade-in" data-aos-duration="1000">
+                            <a href='/ProductEnquiry'><img src="/assets/Home/calculator.png" alt=""/>
+                            <p>create <br/> your<br/> own <br/>quote</p></a>
+                        </div>
+                    </div>
+                </div>
       <section className="MainContainer">
         <div className="container">
           <div className="ABHero">

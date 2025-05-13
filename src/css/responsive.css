@@ -746,7 +746,8 @@
         margin: 10px;
     }
     .logo img{
-        width: 185px;
+        width: 300px;
+        /* width: 185px; */
     }
     .sliderSec {
         width: 100%;

@@ -82,10 +82,13 @@
 /* extra added */
 @media screen and (min-width:999px) and (max-width:1024px){
 .PrnServ1 p{
-    width: 280px;
+    width: 300px;
 }
 }
 @media screen and (min-width:1024px) and (max-width:1367px){
+    .PrnServ1 p{
+    width: 280px;
+}
     .heroSection {
         padding-left: 35px;
     }
@@ -490,6 +493,51 @@
     .beforeLogo{
         /* margin-left: -15px; */
     }
+   .manImg {
+        display: none;
+    }
+    .eco{
+        border-right: none;
+       }
+       .ecoCnt p {
+        margin-top: 5px;
+    }
+
+    
+    .PrntSlider{
+        gap: 0;
+    } 
+
+    .PrnServ1 p{
+        width: auto;
+    }
+
+      .heroSection {
+        padding-left: 0;
+        padding: 40px;
+    }
+    .heroRow {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .heroTxt p {
+        max-width: 100%;
+        font-weight: 700;
+    }
+    
+        .heroTxt {
+            width: 100%;
+        }
+        .heroSldr{
+            width: 100%;
+           margin-bottom: 15px;
+         }
+       
+         .PrntSlider img {
+            width: 500px;
+            height: auto;
+            margin: 10px;
+        }
   }
   
 
@@ -513,9 +561,18 @@
     gap:25px;
     }
 
+    .PrntSlider{
+        gap: 0;
+    } 
+
+    .PrnServ1 p{
+        width: auto;
+    }
+
+/* 
     .heroTxt{
         margin-left: 130px;
-    }
+    } */
 
     .toggle {
         right: -10px;
@@ -666,6 +723,10 @@
 }
 
 @media (max-width:662px){
+
+     .PrnServ1 p{
+       margin-right: 30px;
+    }
     .desc {
         width: auto;
     }
@@ -972,9 +1033,9 @@
     .calc p{
         line-height: 14px !important;
     }
-    .ServList{
+    /* .ServList{
        margin-right: 40px;
-    }
+    } */
     .desc p{
         font-size: 16px;
     }

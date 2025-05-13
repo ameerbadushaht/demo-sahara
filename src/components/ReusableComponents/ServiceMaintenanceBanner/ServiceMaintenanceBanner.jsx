@@ -47,12 +47,12 @@ function ServiceMaintenanceBanner() {
                                 <h3>Decade-Long Expertise in Copier & Printer Maintenance Across the UAE!</h3>
                                 <p className='servMainDesc'>Nothing is more frustrating than a copier that isn’t working correctly, we know well how one broken down copier can disrupt an entire office. We are offering copier service level agreement since a decade.</p>
                                 <div class="PrList mainteLst">
-                                    <li>Experience in the area of Copier AMC (annual maintenance contract), FSMA (Full service maintenance agreement) and other Office equipment for almost a decade now in the UAE. The best companies and Government Institutions in UAE are our clients.</li>
+                                    <li>Experience in the area of Copier AMC (annual maintenance contract), FSMA (Full service maintenance agreement) and other Office equipment for more than a decade now in the UAE. The best companies and Government Institutions in UAE are our clients.</li>
                                     <li>UAE based company with offices in Sharjah – we operate with world class processes, SLA and customer service norms.</li>
                                     <li>Large engineering team and proven technical expertise in servicing and maintaining copiers and printers. We also maintain a large inventory of copier printer spare parts that may not be available in the general market.</li>
                                 </div>
                                 <div class="enquiry">
-                                    <a href="/ProductEnquiry">quick enquiry</a>
+                                    <a href="/ProductEnquiry">Quick Enquiry</a>
                                 </div>
                             </div>
                         </div>

@@ -560,7 +560,11 @@
 .slider-Wrapper h3{
   margin-top: 10px;
   font-size: 22px;
+  height: 55px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .slider-Wrapper p{
   font-weight: 300 ;

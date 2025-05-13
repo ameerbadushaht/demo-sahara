@@ -98,7 +98,7 @@ function ServiceComponent() {
                                        </div>
                                    </div>
                            <div className="enquiry" data-aos="fade-in" data-aos-duration="1000" >
-                           <a href="/ProductEnquiry">quick enquiry</a>
+                           <a href="/ProductEnquiry">Quick Enquiry</a>
                                {/* <Link to={"/ProductEnquiry"}>quick enquiry</Link> */}
                            </div>
                        </div>

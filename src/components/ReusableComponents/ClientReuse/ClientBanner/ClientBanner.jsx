@@ -46,7 +46,7 @@ function ClientBanner() {
                         </div>
                         <div className="col-md-6">
                             <div className="ClntSec" data-aos="fade-in" data-aos-duration="1000">
-                                <h3>Our Valued Customers</h3>
+                                <h3>Some of our valued customers</h3>
                                 <p className='clntPDesc'>We take pride in showcasing our esteemed clients who bring quality, innovation, and reliability to the industry. Whether you're looking for top-tier services or trusted business collaborations, our network of partners is here to meet your needs. Explore our listings and connect with the best in the market.</p>
                             </div>
                         </div>

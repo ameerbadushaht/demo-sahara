@@ -122,7 +122,7 @@ function ContactComponents() {
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div className="location">
+                                            {/* <div className="location">
                                                 <div className="locIcon">
                                                     <img src="/assets/Contact/locate.png" alt="" />
                                                 </div>
@@ -137,7 +137,7 @@ function ContactComponents() {
                                                     </h2>
                                                     <p>Branch Office</p>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                         </div>
 
                                         <div className="contactOptions">
@@ -147,7 +147,7 @@ function ContactComponents() {
                                                 data-aos-duration="1000"
                                             >
                                                 <div className="circle mobile">
-                                                    <img src="/assets/Contact/phone.png" alt="" />
+                                                    <img src="/assets/Contact/call.png" alt="" />
                                                 </div>
                                                 <div className="number">
                                                     <h3>+971 6 5426169, +971 6 5276444</h3>
@@ -159,7 +159,7 @@ function ContactComponents() {
                                                 data-aos-duration="1000"
                                             >
                                                 <div className="circle">
-                                                    <img src="/assets/Contact/call.png" alt="" />
+                                                    <img src="/assets/Contact/phone.png" alt="" />
                                                 </div>
                                                 <div>
                                                     <h3>+971 50 3823969</h3>

@@ -91,7 +91,7 @@ function PrdctMultiBanner() {
                   {/* <h1><span>{product.productFullName}</span></h1> */}
                 </div>
                 <div className="AbHroImg multiImg">
-                  <img src={product.img} alt="" />
+                  <img src={product.img2} alt="" />
                 </div>
               </div>
             </div>
@@ -151,34 +151,34 @@ function PrdctMultiBanner() {
                       </div> */}
 
                   <div className="PrList">
-  {product.features && product.features.map((feature, idx) => (
-    <div key={idx}>
-      <div style={{ fontWeight: 'bold'}}>
-        {feature.title}:
-      </div>
+                    {product.features && product.features.map((feature, idx) => (
+                        <div key={idx}>
+                        <div style={{ fontWeight: 'bold'}}>
+                            {feature.title}:
+                        </div>
 
-      {/\d+\.\s/.test(feature.detail) ? (
-        <ul style={{ paddingLeft: '1.2rem' }}>
-          {feature.detail.split(/\n+/).filter(line => line.trim()).map((line, i) => {
-            const match = line.match(/^(\d+\.\s*)([^–-]+)[–-]\s*(.*)/);
-            if (match) {
-              const [, , heading, text] = match;
-              return (
-                <li key={i}>
-                  <strong>{heading.trim()}</strong> – {text.trim()}
-                </li>
-              );
-            } else {
-              return <li key={i}>{line}</li>;
-            }
-          })}
-        </ul>
-      ) : (
-        <p style={{ marginLeft: '1rem' }}>{feature.detail}</p>
-      )}
-    </div>
-  ))}
-</div>
+                        {/\d+\.\s/.test(feature.detail) ? (
+                            <ul style={{ paddingLeft: '1.2rem',textAlign: 'justify' }}>
+                            {feature.detail.split(/\n+/).filter(line => line.trim()).map((line, i) => {
+                                const match = line.match(/^(\d+\.\s*)([^–-]+)[–-]\s*(.*)/);
+                                if (match) {
+                                const [, , heading, text] = match;
+                                return (
+                                    <li key={i}>
+                                    <strong>{heading.trim()}</strong> – {text.trim()}
+                                    </li>
+                                );
+                                } else {
+                                return <li key={i}>{line}</li>;
+                                }
+                            })}
+                            </ul>
+                        ) : (
+                            <p style={{ marginLeft: '1rem',textAlign: 'justify' }}>{feature.detail}</p>
+                        )}
+                        </div>
+                    ))}
+                    </div>
 
 
 

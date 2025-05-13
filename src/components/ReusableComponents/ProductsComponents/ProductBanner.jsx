@@ -124,12 +124,12 @@ function ProductBanner() {
                                 </div>
                                 <div className="col-md-6">
                                     <div className="ClntSec consumDesc PrdctDetal ClntTopMarg" data-aos="fade-in" data-aos-duration="1000">
-                                        <h3 >Extensive Stock of Copier & Printer Parts – Find What You Need!</h3>
+                                        <h3>Extensive Stock of Copier & Printer Parts – Find What You Need!</h3>
                                         <p>Look no further! We provide high-quality copier and printer spare parts to ensure your devices keep running smoothly. Whether you need toner cartridges, fuser units, drum kits, rollers, or any other essential component, we’ve got you covered. Our extensive inventory includes parts for a wide range of copier and printer brands, ensuring you find exactly what you need without unnecessary delays.</p>
                                         <p>Our team of experienced technicians is always ready to assist you. With in-depth expertise, they will help identify the right part and ensure your copier or printer functions efficiently. Whether you're dealing with wear and tear or unexpected breakdowns, we provide reliable solutions tailored to your specific needs.</p>
                                         <p>For all your copier and printer consumables and spare parts inquiries, reach out to us today! Let’s discuss the best customized solution for your device and get it back to peak performance in no time.</p>
                                         <div className="enquiry">
-                                            <Link to={"/ProductEnquiry"}>quick enquiry</Link>
+                                            <Link to={"/ProductEnquiry"}>Quick Enquiry</Link>
                                         </div>
                                     </div>
                                 </div>

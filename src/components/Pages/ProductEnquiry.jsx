@@ -306,11 +306,6 @@ function ProductEnquiry() {
                 )}
 
 
-
-
-
-
-
                 {activeTab === "Qute2" && (
                   <div
                     id="Qute2"
@@ -379,7 +374,7 @@ function ProductEnquiry() {
                                     style={{ display: "block" }}
                                   >
                                     <div className="PrnDesc">
-                                      <div className="DescRow">
+                                      <div className="DescRow" >
                                         <div className="dscrption">
                                           <div
                                             className="DescSec"
@@ -397,16 +392,12 @@ function ProductEnquiry() {
                                             <div className="PrntrDetails">
                                               <h3>{printer.productFullName}</h3>
                                               <ul>
-                                                {printer.features.map(
-                                                  (feature, index) => (
-                                                    <li key={index}>
-                                                      <span>
-                                                        {feature.title}
-                                                      </span>{" "}
-                                                      - {feature.detail}
-                                                    </li>
-                                                  )
-                                                )}
+                                               {printer.features.slice(0, 4).map((feature, index) => (
+                                                <li key={index}>
+                                                    <span>{feature.title}</span> - {feature.detail}
+                                                </li>
+                                                ))}
+
                                               </ul>
                                             </div>
                                           </div>

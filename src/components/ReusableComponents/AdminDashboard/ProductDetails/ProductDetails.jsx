@@ -16,12 +16,12 @@ function ProductDetails() {
       productFullName: "",
       description: "",
       features: [],
-      ogImg: "",
-      bImg: "",
+      img: "",
       img1: "",
       img2: "",
       img3: "",
       img4: "",
+      img5: "",
       brand: "",
       connectivity: "",
       printingTechnology: "",
@@ -44,8 +44,8 @@ function ProductDetails() {
 
 
   const imageLabels = {
-  ogImg: "Main Image (ogImg)",
-  bImg: "Back Image (bImg)",
+  ogImg: "Main Image",
+  bImg: "Banner Image",
   img1: "Slider Image 1",
   img2: "Slider Image 2",
   img3: "Slider Image 3",
@@ -154,20 +154,22 @@ const renderImage = (key, index) => {
         formData.append("removedImages", JSON.stringify(removedImages));
       }
 
-    //   const response = await fetch(
-    //     `http://localhost:5000/api/update/${product._id}`,
-    //     {
-    //       method: "PUT",
-    //       body: formData,
-    //     }
-    //   );
       const response = await fetch(
-        `https://sahara-backend-tubt.onrender.com/api/update/${product._id}`,
+        `http://localhost:5000/api/update/${product._id}`,
         {
           method: "PUT",
           body: formData,
         }
       );
+
+      
+    //   const response = await fetch(
+    //     `https://sahara-backend-tubt.onrender.com/api/update/${product._id}`,
+    //     {
+    //       method: "PUT",
+    //       body: formData,
+    //     }
+    //   );
 
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || "Failed to update product");
@@ -235,7 +237,7 @@ const renderImage = (key, index) => {
       </div> */}
 
         <div className={`product-image-gallery ${isEditing ? "editing" : ""}`}>
-        {["ogImg", "bImg", "img1", "img2", "img3", "img4"].map((key, index) => (
+        {["img", "img1", "img2", "img3", "img4" ,"img5"].map((key, index) => (
             <div key={key}>{renderImage(key, index)}</div>  
         ))}
         </div>

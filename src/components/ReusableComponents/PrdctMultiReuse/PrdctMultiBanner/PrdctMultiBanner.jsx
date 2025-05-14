@@ -45,7 +45,7 @@ function PrdctMultiBanner() {
 
   if (!product) return <Loader />;
 
-  const images = [product.img, product.img1, product.img2, product.img3, product.img4].filter(Boolean);
+  const images = [ product.img2, product.img3, product.img4, product.img5].filter(Boolean);
 
   const mainSliderSettings = {
     slidesToShow: 1,
@@ -88,7 +88,7 @@ function PrdctMultiBanner() {
               <h1>{product.title}</h1>
             </div>
             <div className="AbHroImg multiImg">
-              <img src={product.img2} alt="" />
+              <img src={product.img1} alt="" />
             </div>
           </div>
         </div>

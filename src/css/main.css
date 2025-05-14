@@ -992,6 +992,7 @@
 .TabImg h3{
   padding-top: 10px;
   font-weight: 600;
+  font-size: 13px;
 }
 .DescSec{
   display: flex;
@@ -1013,6 +1014,7 @@
 .PrntrDetails h3{
   font-weight: 600;
   margin-bottom: 10px;
+  font-size: 17px;
 }
 .PrntImage img{
   width: 800px;
@@ -1775,7 +1777,7 @@ table  tr{
     flex-direction: row;
     overflow-x: auto;
     padding: 10px 0;
-    white-space: nowrap;
+    /* white-space: nowrap; */
   }
   
   .InnrTbLnk {

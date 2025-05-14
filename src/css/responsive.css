@@ -1074,8 +1074,13 @@
     }
 
     .FtrCol {
-        padding: 0 20px;
+        padding: 0 25px;
     }
+
+    .col-40{
+       
+        padding: 0px;
+      }
 }
 
 @media (max-width:400px){

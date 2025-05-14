@@ -44,12 +44,13 @@ function ProductDetails() {
 
 
   const imageLabels = {
-  ogImg: "Main Image",
-  bImg: "Banner Image",
-  img1: "Slider Image 1",
+  img: "Main Image",
+  img1: "Banner Image",
   img2: "Slider Image 2",
   img3: "Slider Image 3",
   img4: "Slider Image 4",
+  img5: "Slider Image 5",
+  img6: "Slider Image 6",
 };
 
   const [tempProduct, setTempProduct] = useState({ ...product });

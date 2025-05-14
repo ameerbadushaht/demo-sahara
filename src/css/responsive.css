@@ -1069,6 +1069,13 @@
     .ServList h2{
         margin-bottom: 10px;
     }
+    .FtrCol p{
+        width: 100%;
+    }
+
+    .FtrCol {
+        padding: 0 20px;
+    }
 }
 
 @media (max-width:400px){

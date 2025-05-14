@@ -13,7 +13,7 @@ function Footer() {
                 <div className="row">
                     <div className="col-40">
                         <div className="FtrCol">
-                            <div className="FtrLogo" data-aos="fade-in" data-aos-duration="1000"><img src="/assets/Home/logo_white.svg" alt=""/></div>
+                            <div className="FtrLogo" data-aos="fade-in" data-aos-duration="1000"><img src="/assets/Home/sahra log.svg" alt=""/></div>
                             <div data-aos="fade-in" data-aos-duration="1000"><p>Trusted provider of office equipment solutions in the UAE, specializing in printer rentals, managed print services, and document management solutions. With a commitment to quality and customer satisfaction</p></div>
                             <div  className="medias" data-aos="zoom-in" data-aos-duration="1000">
                                 <div className="MdIcons"><a href="https://www.facebook.com/saharaedoc"><i className="fa-brands fa-facebook-f"></i></a></div>

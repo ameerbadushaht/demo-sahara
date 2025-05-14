@@ -16,7 +16,8 @@ function ProductDetails() {
       productFullName: "",
       description: "",
       features: [],
-      img: "",
+      ogImg: "",
+      bImg: "",
       img1: "",
       img2: "",
       img3: "",
@@ -40,6 +41,16 @@ function ProductDetails() {
       customOrder: "",
     }
   );
+
+
+  const imageLabels = {
+  ogImg: "Main Image (ogImg)",
+  bImg: "Back Image (bImg)",
+  img1: "Slider Image 1",
+  img2: "Slider Image 2",
+  img3: "Slider Image 3",
+  img4: "Slider Image 4",
+};
 
   const [tempProduct, setTempProduct] = useState({ ...product });
 
@@ -75,22 +86,23 @@ function ProductDetails() {
 const renderImage = (key, index) => {
     const value = tempProduct[key];
     const isFile = value instanceof File;
-  
+  const label = imageLabels[key] || `Image ${index + 1}`; 
     return (
-      <div className="product-image-block" key={key}>
-        {/* Image number */}
-        <div className="image-number">{index + 1}</div>
-  
-        {value && (
-          <img
-            src={isFile ? URL.createObjectURL(value) : value}
-            alt={key}
-            className="product-preview-image"
-          />
-        )}
-  
-        {isEditing && (
-          <div className="image-controls">
+     <div className="product-image-block" key={key}>
+      <div className="image-number">{label}</div>
+
+      {value && (
+        <img
+          src={isFile ? URL.createObjectURL(value) : value}
+          alt={key}
+          className="product-preview-image"
+        />
+      )}
+
+      {isEditing && (
+        <div className="image-controls">
+          <label>
+            <span className="upload-label">Change {label}:</span>
             <input
               type="file"
               onChange={(e) =>
@@ -100,24 +112,25 @@ const renderImage = (key, index) => {
                 }))
               }
             />
-            {value && (
-              <button
-                type="button"
-                className="remove-btn"
-                onClick={() => {
-                  setTempProduct((prev) => ({
-                    ...prev,
-                    [key]: "",
-                  }));
-                  setRemovedImages((prev) => [...prev, key]);
-                }}
-              >
-                Remove
-              </button>
-            )}
-          </div>
-        )}
-      </div>
+          </label>
+          {value && (
+            <button
+              type="button"
+              className="remove-btn"
+              onClick={() => {
+                setTempProduct((prev) => ({
+                  ...prev,
+                  [key]: "",
+                }));
+                setRemovedImages((prev) => [...prev, key]);
+              }}
+            >
+              Remove
+            </button>
+          )}
+        </div>
+      )}
+    </div>
     );
   };
   
@@ -222,7 +235,7 @@ const renderImage = (key, index) => {
       </div> */}
 
         <div className={`product-image-gallery ${isEditing ? "editing" : ""}`}>
-        {["img", "img1", "img2", "img3", "img4"].map((key, index) => (
+        {["ogImg", "bImg", "img1", "img2", "img3", "img4"].map((key, index) => (
             <div key={key}>{renderImage(key, index)}</div>  
         ))}
         </div>

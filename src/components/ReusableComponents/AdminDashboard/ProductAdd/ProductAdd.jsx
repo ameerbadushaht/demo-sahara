@@ -6,8 +6,11 @@ const ProductAdd = () => {
     const [product, setProduct] = useState({});
     const [features, setFeatures] = useState([{ title: "", detail: "" }]);
     const [loading, setLoading] = useState(false);
-    const [imageFiles, setImageFiles] = useState([]);
-const [previews, setPreviews] = useState([]);
+    // const [imageFiles, setImageFiles] = useState([]);
+    // const [previews, setPreviews] = useState([]);
+    const [ogImg, setOgImg] = useState(null);
+    const [bImg, setBImg] = useState(null);
+    const [sliderImgs, setSliderImgs] = useState([]);
 
 
     const handleChange = (e) => {
@@ -29,13 +32,19 @@ const [previews, setPreviews] = useState([]);
         setProduct(updatedProduct);
     };
 
-    const handleImageChange = (e) => {
-        const files = Array.from(e.target.files);
-        setImageFiles(files);
+    // const handleImageChange = (e) => {
+    //     const files = Array.from(e.target.files);
+    //     setImageFiles(files);
     
-        const previewURLs = files.map(file => URL.createObjectURL(file));
-        setPreviews(previewURLs);
-    };
+    //     const previewURLs = files.map(file => URL.createObjectURL(file));
+    //     setPreviews(previewURLs);
+    // };
+
+
+    const handleOgImgChange = (e) => setOgImg(e.target.files[0]);
+    const handleBImgChange = (e) => setBImg(e.target.files[0]);
+    const handleSliderImgsChange = (e) => setSliderImgs(Array.from(e.target.files));
+
     
 
     const handleFeatureChange = (index, field, value) => {
@@ -57,12 +66,19 @@ const [previews, setPreviews] = useState([]);
             formData.append(key, value);
         });
 
-        if (imageFiles.length > 0) {
-            imageFiles.forEach((file) => {
-                formData.append("images", file); // "images" matches the field expected by backend
-            });
-        }
+        // if (imageFiles.length > 0) {
+        //     imageFiles.forEach((file) => {
+        //         formData.append("images", file); // "images" matches the field expected by backend
+        //     });
+        // }
         
+
+        if (ogImg) formData.append('ogImg', ogImg);
+        if (bImg) formData.append('bImg', bImg);
+        if (sliderImgs.length > 0) {
+            sliderImgs.forEach((file) => formData.append('sliderImgs', file));
+        }
+
       
 
         formData.append('features', JSON.stringify(features));
@@ -210,7 +226,7 @@ const [previews, setPreviews] = useState([]);
                         <span className="admin-product-add-section-icon">🖨️</span> Printer Specifications
                     </h3>
                     <div className="admin-product-add-two-column">
-                        <div className="admin-product-add-image-upload">
+                        {/* <div className="admin-product-add-image-upload">
                             <label className="admin-product-add-label">
                                 Product Image:
                                 <div className="admin-product-add-file-upload">
@@ -238,7 +254,28 @@ const [previews, setPreviews] = useState([]);
                                 </div>
                                 )}
 
-                        </div>
+                        </div> */}
+
+                        <section className="admin-product-add-section">
+                            <h3 className="admin-product-add-section-title">
+                                <span className="admin-product-add-section-icon">🖼️</span> Additional Images
+                            </h3>
+                            <div className="admin-product-add-form-group">
+                                <label className="admin-product-add-label">
+                                OG Image:
+                                <input type="file" name="ogImg" accept="image/*" onChange={handleOgImgChange} required />
+                                </label>
+                                <label className="admin-product-add-label">
+                                Banner Image:
+                                <input type="file" name="bImg" accept="image/*" onChange={handleBImgChange} required />
+                                </label>
+                                <label className="admin-product-add-label">
+                                Slider Images:
+                                <input type="file" name="sliderImgs" accept="image/*" multiple onChange={handleSliderImgsChange} />
+                                </label>
+                            </div>
+                        </section>
+
 
                         <div className="admin-product-add-form-group">
                             {printerDetails.map(({ label, name }) => (

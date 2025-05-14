@@ -323,3 +323,9 @@
     margin: 10px;
   }
   
+
+  .upload-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}

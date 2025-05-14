@@ -42,8 +42,11 @@ function RequestSection() {
                         </div>
                         <div className="AddTxt">
                             <div><img src="/assets/Home/calculator.png" alt=""/></div>
-                            <div><h3>Create your <br/>
-                               <span> own quote </span><br/>now</h3></div>
+                            <div><h3>Usage &<br/>
+                               <span> Pricing</span><br/>Calculator</h3></div>
+                                 
+                            {/* <div><h3>Create your <br/>
+                               <span> own quote </span><br/>now</h3></div> */}
                         </div></a>
                         
                     </div>

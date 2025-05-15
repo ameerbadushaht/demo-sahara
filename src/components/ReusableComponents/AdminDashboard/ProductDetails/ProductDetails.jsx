@@ -155,22 +155,22 @@ const renderImage = (key, index) => {
         formData.append("removedImages", JSON.stringify(removedImages));
       }
 
-      const response = await fetch(
-        `http://localhost:5000/api/update/${product._id}`,
-        {
-          method: "PUT",
-          body: formData,
-        }
-      );
-
-      
     //   const response = await fetch(
-    //     `https://sahara-backend-tubt.onrender.com/api/update/${product._id}`,
+    //     `http://localhost:5000/api/update/${product._id}`,
     //     {
     //       method: "PUT",
     //       body: formData,
     //     }
     //   );
+
+      
+      const response = await fetch(
+        `https://sahara-backend-tubt.onrender.com/api/update/${product._id}`,
+        {
+          method: "PUT",
+          body: formData,
+        }
+      );
 
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || "Failed to update product");

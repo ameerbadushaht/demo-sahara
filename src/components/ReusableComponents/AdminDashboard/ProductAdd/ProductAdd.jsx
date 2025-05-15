@@ -335,14 +335,14 @@ const ProductAdd = () => {
             [name]: value.trim()
         };
 
-        if (["dcp", "dcpPrice", "dbp", "dbpPrice"].includes(name)) {
-            const dcp = parseFloat(updatedProduct.dcp || 0);
-            const dcpPrice = parseFloat(updatedProduct.dcpPrice || 0);
-            const dbp = parseFloat(updatedProduct.dbp || 0);
-            const dbpPrice = parseFloat(updatedProduct.dbpPrice || 0);
-            const total = (dcp * dcpPrice) + (dbp * dbpPrice);
-            updatedProduct.itemPrice = total.toFixed(2);
-        }
+        // if (["dcp", "dcpPrice", "dbp", "dbpPrice"].includes(name)) {
+        //     const dcp = parseFloat(updatedProduct.dcp || 0);
+        //     const dcpPrice = parseFloat(updatedProduct.dcpPrice || 0);
+        //     const dbp = parseFloat(updatedProduct.dbp || 0);
+        //     const dbpPrice = parseFloat(updatedProduct.dbpPrice || 0);
+        //     const total = (dcp * dcpPrice) + (dbp * dbpPrice);
+        //     updatedProduct.itemPrice = total.toFixed(2);
+        // }
 
         setProduct(updatedProduct);
     };
@@ -689,35 +689,6 @@ const handleSubmit = async (e) => {
 
                         </section>
 
-                         {/* <div className="admin-product-add-image-upload">
-                            <label className="admin-product-add-label">
-                                Product Image:
-                                <div className="admin-product-add-file-upload">
-                                <input 
-                                    type="file" 
-                                    name="img" 
-                                    accept="image/*" 
-                                    onChange={handleImageChange} 
-                                    className="admin-product-add-file-input"
-                                    multiple  // <-- Add this
-                                    required 
-                                    />
-
-                                    <span className="admin-product-add-file-button">Choose File</span>
-                                    {imageFiles && (
-                                        <span className="admin-product-add-file-name">{imageFiles.name}</span>
-                                    )}
-                                </div>
-                            </label>
-                            {previews.length > 0 && (
-                                <div className="admin-product-add-image-preview">
-                                    {previews.map((src, index) => (
-                                    <img key={index} src={src} alt={`Preview ${index}`} className="admin-product-add-preview-img" />
-                                    ))}
-                                </div>
-                                )}
-
-                        </div> */}
 
                         <div className="admin-product-add-form-group">
                             {printerDetails.map(({ label, name }) => (

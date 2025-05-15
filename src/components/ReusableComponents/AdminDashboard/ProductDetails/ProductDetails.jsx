@@ -61,14 +61,14 @@ function ProductDetails() {
     setTempProduct((prev) => {
       const updated = { ...prev, [name]: value };
 
-      const dcp = parseFloat(updated.dcp) || 0;
-      const dcpPrice = parseFloat(updated.dcpPrice) || 0;
-      const dbp = parseFloat(updated.dbp) || 0;
-      const dbpPrice = parseFloat(updated.dbpPrice) || 0;
+    //   const dcp = parseFloat(updated.dcp) || 0;
+    //   const dcpPrice = parseFloat(updated.dcpPrice) || 0;
+    //   const dbp = parseFloat(updated.dbp) || 0;
+    //   const dbpPrice = parseFloat(updated.dbpPrice) || 0;
 
-      if (["dcp", "dcpPrice", "dbp", "dbpPrice"].includes(name)) {
-        updated.itemPrice = (dcp * dcpPrice + dbp * dbpPrice).toFixed(2);
-      }
+    //   if (["dcp", "dcpPrice", "dbp", "dbpPrice"].includes(name)) {
+    //     updated.itemPrice = (dcp * dcpPrice + dbp * dbpPrice).toFixed(2);
+    //   }
 
       return updated;
     });
@@ -355,7 +355,7 @@ const renderImage = (key, index) => {
         <div className="product-section">
           <h3>💰 Price Details</h3>
           {[
-            "dcp", "dcpPrice", "dbp", "dbpPrice", "slideRange", "itemPrice"
+            "Color Prints", "Color Print Price", "Black Prints", "Black Print Price", "slideRange", "itemPrice"
           ].map((key) => (
             <div key={key} className="product-detail-item">
               <strong>{key.replace(/([A-Z])/g, " $1")}:</strong>

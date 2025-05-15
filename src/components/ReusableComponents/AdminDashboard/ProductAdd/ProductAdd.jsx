@@ -534,10 +534,10 @@ const handleSubmit = async (e) => {
     ];
 
     const priceFields = [
-        { label: "Default Color Prints", name: "dcp" },
-        { label: "Color Print Unit Price", name: "dcpPrice" },
-        { label: "Default Black Prints", name: "dbp" },
-        { label: "Black Print Unit Price", name: "dbpPrice" },
+        { label: "Default Color Prints", name: "colorPrint" },
+        { label: "Color Print Unit Price", name: "colorPrice" },
+        { label: "Default Black Prints", name: "blackPrint" },
+        { label: "Black Print Unit Price", name: "blackPrice" },
         { label: "Default Print Price", name: "itemPrice" },
         { label: "Slide Range", name: "slideRange" },
         { label: "Custom Order", name: "customOrder" },

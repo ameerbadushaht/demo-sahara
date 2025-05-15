@@ -32,10 +32,10 @@ function ProductDetails() {
       maxPrintSpeedColor: "",
       maxPrintSpeedMonochrome: "",
       itemWeight: "",
-      dcp: "",
-      dcpPrice: "",
-      dbp: "",
-      dbpPrice: "",
+      colorPrint: "",
+      colorPrice: "",
+      blackPrint: "",
+      blackPrice: "",
       itemPrice: "",
       slideRange: "",
       customOrder: "",
@@ -355,7 +355,7 @@ const renderImage = (key, index) => {
         <div className="product-section">
           <h3>💰 Price Details</h3>
           {[
-            "Color Prints", "Color Print Price", "Black Prints", "Black Print Price", "slideRange", "itemPrice"
+            "colorPrint", "colorPrice", "blackPrint", "blackPrice", "slideRange", "itemPrice"
           ].map((key) => (
             <div key={key} className="product-detail-item">
               <strong>{key.replace(/([A-Z])/g, " $1")}:</strong>

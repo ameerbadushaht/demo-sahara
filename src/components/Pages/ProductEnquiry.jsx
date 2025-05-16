@@ -187,36 +187,36 @@ function ProductEnquiry() {
 
 
     const defaultBlackPages = Number(printer.blackPrint) || 0;
-    console.log(`defaultBlackPages = Number(${printer.blackPrint}) || 0 = ${defaultBlackPages}`);
+    // console.log(`defaultBlackPages = Number(${printer.blackPrint}) || 0 = ${defaultBlackPages}`);
 
     const defaultColorPages = Number(printer.colorPrint) || 0;
-    console.log(`defaultColorPages = Number(${printer.colorPrint}) || 0 = ${defaultColorPages}`);
+    // console.log(`defaultColorPages = Number(${printer.colorPrint}) || 0 = ${defaultColorPages}`);
 
-    console.log(`User Input - black = ${black}`);
-    console.log(`User Input - color = ${color}`);
+    // console.log(`User Input - black = ${black}`);
+    // console.log(`User Input - color = ${color}`);
 
     const differenceBlackPages = Number(black - defaultBlackPages);
-    console.log(`differenceBlackPages = ${black} - ${defaultBlackPages} = ${differenceBlackPages}`);
+    // console.log(`differenceBlackPages = ${black} - ${defaultBlackPages} = ${differenceBlackPages}`);
 
     const differenceColorPages = Number(color - defaultColorPages) || 0;
-    console.log(`differenceColorPages = ${color} - ${defaultColorPages} = ${differenceColorPages}`);
+    // console.log(`differenceColorPages = ${color} - ${defaultColorPages} = ${differenceColorPages}`);
 
     const blackPrintCost = Number(blackPrice);
-    console.log(`blackPrintCost = Number(${blackPrice}) = ${blackPrintCost}`);
+    // console.log(`blackPrintCost = Number(${blackPrice}) = ${blackPrintCost}`);
 
     const colorPrintCost = Number(colorPrice);
-    console.log(`colorPrintCost = Number(${colorPrice}) = ${colorPrintCost}`);
+    // console.log(`colorPrintCost = Number(${colorPrice}) = ${colorPrintCost}`);
 
     const totalBlackPrice = differenceBlackPages * blackPrintCost;
-    console.log(`totalBlackPrice = ${differenceBlackPages} * ${blackPrintCost} = ${totalBlackPrice}`);
+    // console.log(`totalBlackPrice = ${differenceBlackPages} * ${blackPrintCost} = ${totalBlackPrice}`);
 
     const totalColorPrice = differenceColorPages * colorPrintCost;
-    console.log(`totalColorPrice = ${differenceColorPages} * ${colorPrintCost} = ${totalColorPrice}`);
+    // console.log(`totalColorPrice = ${differenceColorPages} * ${colorPrintCost} = ${totalColorPrice}`);
 
-    console.log(`baseCost = ${baseCost}`);
+    // console.log(`baseCost = ${baseCost}`);
 
     const total = baseCost + totalBlackPrice + totalColorPrice;
-    console.log(`total = ${baseCost} + ${totalBlackPrice} + ${totalColorPrice} = ${total}`);
+    // console.log(`total = ${baseCost} + ${totalBlackPrice} + ${totalColorPrice} = ${total}`);
 
 
 
@@ -559,7 +559,7 @@ function ProductEnquiry() {
                                 type="range"
                                 value={blackPrints}
                                 min="0"
-                                max="100000"
+                                max="50000"
                                 step={currentPrinterData.slideRange}
                                 onChange={handleBlackPrintsChange}
                                 id="range1"
@@ -574,7 +574,7 @@ function ProductEnquiry() {
                                 value={colorPrints}
                                 min="0"
                                 step={currentPrinterData.slideRange}
-                                max="100000"
+                                max="50000"
                                 onChange={handleColorPrintsChange}
                               />
                               <label id="label2">

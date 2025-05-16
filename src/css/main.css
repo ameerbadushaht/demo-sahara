@@ -997,7 +997,7 @@
 .DescSec{
   display: flex;
   align-items: center; 
-  justify-content: center;
+  justify-content: flex-end;
   gap: 15px;
 }
 .PrnDesc{
@@ -1033,6 +1033,7 @@
 
 .PrDesc{
   position: relative;
+  /* margin-left: 50px; */
 }
 .PrDesc::before{
   content: "";
@@ -1052,7 +1053,8 @@
   text-align: left;
 }
 .DescList{
-  width: 300px;
+  /* width: 300px; */
+  width:145px;
   font-weight: 600 !important;
 }
 .DetlList li{

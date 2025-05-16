@@ -169,25 +169,65 @@ function ProductEnquiry() {
 
     setbaseCost(baseCost)
     
-    const defaultBlackPages = Number(printer.blackPrint) || 0; // default black pages
-    const defaultColorPages = Number(printer.colorPrint) || 0; // default color pages
-    const differenceBlackPages = Number(black-defaultBlackPages )// user input black pages = 10
-    const differenceColorPages = Number(color - defaultColorPages) || 0; // user input color pages
+    // const defaultBlackPages = Number(printer.blackPrint) || 0; // default black pages
+    // const defaultColorPages = Number(printer.colorPrint) || 0; // default color pages
+    // const differenceBlackPages = Number(black-defaultBlackPages )// user input black pages = 10
+    // const differenceColorPages = Number(color - defaultColorPages) || 0; // user input color pages
     
-    const blackPrintCost = Number(blackPrice) ;  // unit black
-    const colorPrintCost = Number(colorPrice) ;   // unit color
+    // const blackPrintCost = Number(blackPrice) ;  // unit black
+    // const colorPrintCost = Number(colorPrice) ;   // unit color
 
-    // calculation 
+    // // calculation 
 
-    const totalBlackPrice = differenceBlackPages * blackPrintCost; // cost per page for black
-    const totalColorPrice = differenceColorPages * colorPrintCost; // cost per page for color
+    // const totalBlackPrice = differenceBlackPages * blackPrintCost; // cost per page for black
+    // const totalColorPrice = differenceColorPages * colorPrintCost; // cost per page for color
 
-    const total = (baseCost + totalBlackPrice + totalColorPrice) ;
+    // const total = (baseCost + totalBlackPrice + totalColorPrice) ;
+
+
+
+    const defaultBlackPages = Number(printer.blackPrint) || 0;
+    console.log(`defaultBlackPages = Number(${printer.blackPrint}) || 0 = ${defaultBlackPages}`);
+
+    const defaultColorPages = Number(printer.colorPrint) || 0;
+    console.log(`defaultColorPages = Number(${printer.colorPrint}) || 0 = ${defaultColorPages}`);
+
+    console.log(`User Input - black = ${black}`);
+    console.log(`User Input - color = ${color}`);
+
+    const differenceBlackPages = Number(black - defaultBlackPages);
+    console.log(`differenceBlackPages = ${black} - ${defaultBlackPages} = ${differenceBlackPages}`);
+
+    const differenceColorPages = Number(color - defaultColorPages) || 0;
+    console.log(`differenceColorPages = ${color} - ${defaultColorPages} = ${differenceColorPages}`);
+
+    const blackPrintCost = Number(blackPrice);
+    console.log(`blackPrintCost = Number(${blackPrice}) = ${blackPrintCost}`);
+
+    const colorPrintCost = Number(colorPrice);
+    console.log(`colorPrintCost = Number(${colorPrice}) = ${colorPrintCost}`);
+
+    const totalBlackPrice = differenceBlackPages * blackPrintCost;
+    console.log(`totalBlackPrice = ${differenceBlackPages} * ${blackPrintCost} = ${totalBlackPrice}`);
+
+    const totalColorPrice = differenceColorPages * colorPrintCost;
+    console.log(`totalColorPrice = ${differenceColorPages} * ${colorPrintCost} = ${totalColorPrice}`);
+
+    console.log(`baseCost = ${baseCost}`);
+
+    const total = baseCost + totalBlackPrice + totalColorPrice;
+    console.log(`total = ${baseCost} + ${totalBlackPrice} + ${totalColorPrice} = ${total}`);
+
+
+
+
     if(total < baseCost){  
       setMonthlyCost(baseCost.toFixed(2));
     }
     else{
       setMonthlyCost(total.toFixed(2));
+    //   console.log();
+      
 
     }
 
@@ -519,7 +559,7 @@ function ProductEnquiry() {
                                 type="range"
                                 value={blackPrints}
                                 min="0"
-                                max="5000"
+                                max="15000"
                                 step={currentPrinterData.slideRange}
                                 onChange={handleBlackPrintsChange}
                                 id="range1"
@@ -534,7 +574,7 @@ function ProductEnquiry() {
                                 value={colorPrints}
                                 min="0"
                                 step={currentPrinterData.slideRange}
-                                max="5000"
+                                max="15000"
                                 onChange={handleColorPrintsChange}
                               />
                               <label id="label2">

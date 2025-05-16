@@ -66,10 +66,10 @@ function ProductEnquiry() {
           setSelectedPrinter(products[0]._id);
           setCurrentPrinterData(products[0]);
           // Set initial values based on first printer
-          setBlackPrints(products[0].dbp );
-          setColorPrints(products[0].dcp );
-          setblackPrice(products[0].dbpPrice);
-          setcolorPrice(products[0].dcpPrice);
+          setBlackPrints(products[0].blackPrint );
+          setColorPrints(products[0].colorPrint );
+          setblackPrice(products[0].blackPrice);
+          setcolorPrice(products[0].colorPrice);
         }
 
         setLoading(false);
@@ -91,8 +91,8 @@ function ProductEnquiry() {
     const value = parseInt(e.target.value);
     setBlackPrints(value);
 
-    const defaultBlackPages = Number(currentPrinterData.dbp) || 0; // 1000
-    const defaultColorPages = Number(currentPrinterData.dcp) || 0; // 500
+    const defaultBlackPages = Number(currentPrinterData.blackPrint) || 0; // 1000
+    const defaultColorPages = Number(currentPrinterData.colorPrint) || 0; // 500
 
     const differenceBlackPages = Number(value-defaultBlackPages )// 10
     const differenceColorPages = Number(colorPrints - defaultColorPages) //0
@@ -129,8 +129,8 @@ function ProductEnquiry() {
     
     setColorPrints(value);
 
-    const defaultBlackPages = Number(currentPrinterData.dbp) || 0; // 1000
-    const defaultColorPages = Number(currentPrinterData.dcp) || 0; // 500
+    const defaultBlackPages = Number(currentPrinterData.blackPrint) || 0; // 1000
+    const defaultColorPages = Number(currentPrinterData.colorPrint) || 0; // 500
 
     const differenceBlackPages = Number(blackPrints-defaultBlackPages )// 0
     const differenceColorPages = Number(value - defaultColorPages) //10
@@ -169,8 +169,8 @@ function ProductEnquiry() {
 
     setbaseCost(baseCost)
     
-    const defaultBlackPages = Number(printer.dbp) || 0; // default black pages
-    const defaultColorPages = Number(printer.dcp) || 0; // default color pages
+    const defaultBlackPages = Number(printer.blackPrint) || 0; // default black pages
+    const defaultColorPages = Number(printer.colorPrint) || 0; // default color pages
     const differenceBlackPages = Number(black-defaultBlackPages )// user input black pages = 10
     const differenceColorPages = Number(color - defaultColorPages) || 0; // user input color pages
     
@@ -199,13 +199,13 @@ function ProductEnquiry() {
     const printer = printers.find(p => p._id === printerId);
     setCurrentPrinterData(printer);
     // Reset prints to default values when changing printer
-    setBlackPrints(printer.dbp || 1000);
-    setColorPrints(printer.dcp || 500);
-    setblackPrice(printer.dbpPrice);
-    setcolorPrice(printer.dcpPrice);
+    setBlackPrints(printer.blackPrint || 1000);
+    setColorPrints(printer.colorPrint || 500);
+    setblackPrice(printer.blackPrice);
+    setcolorPrice(printer.colorPrice);
     calculateCost(
-      printer.dbp ,
-      printer.dcp,
+      printer.blackPrint ,
+      printer.colorPrint,
       printer
     );
   };

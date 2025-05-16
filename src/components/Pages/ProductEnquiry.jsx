@@ -449,66 +449,66 @@ function ProductEnquiry() {
                                             data-aos-duration="1000"
                                           >
                                             <div >
-                                              <div className="DetlList">
+                                              {/* <div className="DetlList">
                                                 <li className="DescList">
                                                   Brand
                                                 </li>
                                                 <li>- {printer.brand}</li>
-                                              </div>
-                                              <div className="DetlList">
+                                              </div> */}
+                                              {/* <div className="DetlList">
                                                 <li className="DescList">
                                                   Connectivity technology
                                                 </li>
                                                 <li>
                                                   - {printer.connectivity}
                                                 </li>
-                                              </div>
-                                              <div className="DetlList">
+                                              </div> */}
+                                              {/* <div className="DetlList">
                                                 <li className="DescList">
                                                   Printing technology
                                                 </li>
                                                 <li>
                                                   - {printer.connectivity}
                                                 </li>
-                                              </div>
+                                              </div> */}
                                               <div className="DetlList">
                                                 <li className="DescList">
-                                                  Special features
+                                                  Functions 
                                                 </li>
                                                 <li>
-                                                  - {printer.specialFeatures}
+                                                  - {printer.functions}
                                                 </li>
                                               </div>
-                                              <div className="DetlList">
+                                              {/* <div className="DetlList">
                                                 <li className="DescList">
                                                   Colour
                                                 </li>
                                                 <li>- {printer.color}</li>
-                                              </div>
+                                              </div> */}
                                               <div className="DetlList">
                                                 <li className="DescList">
-                                                  Model name
+                                                 Make and Model
                                                 </li>
-                                                <li>- {printer.modelName}</li>
+                                                <li>- {printer.makeModel}</li>
                                               </div>
                                               <div className="DetlList">
                                                 <li className="DescList">
-                                                  Printer output
+                                                  Output
                                                 </li>
                                                 <li>
-                                                  - {printer.printerOutput}
+                                                  - {printer.output}
                                                 </li>
                                               </div>
                                               <div className="DetlList">
                                                 <li className="DescList">
-                                                  Maximum print speed (colour)
+                                                 Speed
                                                 </li>
                                                 <li>
-                                                  - {printer.maxPrintSpeedColor}{" "}ppm
+                                                  - {printer.speed}{" "} Print Per Minute
                                                  
                                                 </li>
                                               </div>
-                                              <div className="DetlList">
+                                              {/* <div className="DetlList">
                                                 <li className="DescList">
                                                   Max. monochrome printing speed
                                                 </li>
@@ -519,8 +519,8 @@ function ProductEnquiry() {
                                                   }{" "}ppm
                                                   
                                                 </li>
-                                              </div>
-                                              <div className="DetlList">
+                                              </div> */}
+                                              {/* <div className="DetlList">
                                                 <li className="DescList">
                                                   Item weight
                                                 </li>
@@ -528,7 +528,7 @@ function ProductEnquiry() {
                                                   - {printer.itemWeight}{" "}kg
                                                  
                                                 </li>
-                                              </div>
+                                              </div> */}
                                             </div>
                                           </div>
                                         </div>
@@ -559,7 +559,7 @@ function ProductEnquiry() {
                                 type="range"
                                 value={blackPrints}
                                 min="0"
-                                max="15000"
+                                max="100000"
                                 step={currentPrinterData.slideRange}
                                 onChange={handleBlackPrintsChange}
                                 id="range1"
@@ -574,7 +574,7 @@ function ProductEnquiry() {
                                 value={colorPrints}
                                 min="0"
                                 step={currentPrinterData.slideRange}
-                                max="15000"
+                                max="100000"
                                 onChange={handleColorPrintsChange}
                               />
                               <label id="label2">

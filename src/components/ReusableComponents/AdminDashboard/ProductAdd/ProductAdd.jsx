@@ -522,15 +522,15 @@ const handleSubmit = async (e) => {
 
     const printerDetails = [
         { label: "Brand", name: "brand" },
-        { label: "Connectivity", name: "connectivity" },
-        { label: "Printing Technology", name: "printingTechnology" },
-        { label: "Special Features", name: "specialFeatures" },
-        { label: "Color", name: "color" },
-        { label: "Model Name", name: "modelName" },
-        { label: "Printer Output", name: "printerOutput" },
-        { label: "Max Print Speed (Color) (in ppm)", name: "maxPrintSpeedColor" },
-        { label: "Max Monochrome Speed (in ppm)", name: "maxPrintSpeedMonochrome" },
-        { label: "Item Weight (in Kilograms)", name: "itemWeight" },
+        // { label: "Connectivity", name: "connectivity" },
+        // { label: "Printing Technology", name: "printingTechnology" },
+        { label: "Functions", name: "functions" },
+        // { label: "Color", name: "color" },
+        { label: "Make and Model", name: "makeModel" },
+        { label: "Output", name: "output" },
+        { label: "Speed (in ppm)", name: "speed" },
+        // { label: "Max Monochrome Speed (in ppm)", name: "maxPrintSpeedMonochrome" },
+        // { label: "Item Weight (in Kilograms)", name: "itemWeight" },
     ];
 
     const priceFields = [

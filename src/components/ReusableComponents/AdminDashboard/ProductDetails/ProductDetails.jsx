@@ -23,15 +23,15 @@ function ProductDetails() {
       img4: "",
       img5: "",
       brand: "",
-      connectivity: "",
-      printingTechnology: "",
-      specialFeatures: "",
-      color: "",
-      modelName: "",
-      printerOutput: "",
-      maxPrintSpeedColor: "",
-      maxPrintSpeedMonochrome: "",
-      itemWeight: "",
+    //   connectivity: "",
+    //   printingTechnology: "",
+      functions: "",
+    //   color: "",
+      makeModel: "",
+      output: "",
+      speed: "",
+    //   maxPrintSpeedMonochrome: "",
+    //   itemWeight: "",
       colorPrint: "",
       colorPrice: "",
       blackPrint: "",
@@ -336,9 +336,7 @@ const renderImage = (key, index) => {
         <div className="product-section">
           <h3>🖨️ Printer Details</h3>
           {[
-            "brand", "connectivity", "printingTechnology", "specialFeatures",
-            "color", "modelName", "printerOutput", "maxPrintSpeedColor",
-            "maxPrintSpeedMonochrome", "itemWeight"
+            "brand", "functions", "makeModel", "output", "speed",
           ].map((key) => (
             <div key={key} className="product-detail-item">
               <strong>{key.replace(/([A-Z])/g, " $1")}</strong>

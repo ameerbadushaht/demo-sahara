@@ -504,7 +504,7 @@ function ProductEnquiry() {
                                                  Speed
                                                 </li>
                                                 <li>
-                                                  - {printer.speed}{" "} Print Per Minute
+                                                  - {printer.speed}{" "}
                                                  
                                                 </li>
                                               </div>
@@ -708,7 +708,7 @@ function ProductEnquiry() {
                           </div>
                           <div className="btnSnd wtsapp">
                           <a 
-                            href={`https://wa.me/+971503823969?text=${encodeURIComponent(
+                            href={`https://wa.me/971503823969?text=${encodeURIComponent(
                             `*Printer Quote Request*\n\n` +
                             `*Customer Details:*\n` +
                             `Name: ${formData.name || 'Not provided'}\n` +

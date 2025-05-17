@@ -505,7 +505,6 @@ function ProductEnquiry() {
                                                 </li>
                                                 <li>
                                                   - {printer.speed}{" "}
-                                                 
                                                 </li>
                                               </div>
                                               {/* <div className="DetlList">

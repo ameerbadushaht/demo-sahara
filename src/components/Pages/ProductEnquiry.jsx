@@ -558,7 +558,7 @@ function ProductEnquiry() {
                                 type="range"
                                 value={blackPrints}
                                 min="0"
-                                max="50000"
+                                max="5000"
                                 step={currentPrinterData.slideRange}
                                 onChange={handleBlackPrintsChange}
                                 id="range1"
@@ -573,7 +573,7 @@ function ProductEnquiry() {
                                 value={colorPrints}
                                 min="0"
                                 step={currentPrinterData.slideRange}
-                                max="50000"
+                                max="5000"
                                 onChange={handleColorPrintsChange}
                               />
                               <label id="label2">

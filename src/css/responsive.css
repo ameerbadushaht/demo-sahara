@@ -898,6 +898,10 @@
 
 @media(max-width:500px){
 
+    .TabImg h3 {
+    font-size: 13px;
+}
+
   .Copy p{
     font-size: 14px ;
   }

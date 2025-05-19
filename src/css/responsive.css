@@ -897,6 +897,11 @@
 }
 
 @media(max-width:500px){
+
+    .mvRow p{
+        width: auto;
+    }
+
     .heroSection {
         padding: 40px 20px;
         text-align: center;

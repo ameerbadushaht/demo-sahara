@@ -21,7 +21,7 @@ function ClientCompanies() {
   { id: 17, name: "Client 17", filename: "client17.png" },
   { id: 18, name: "Client 18", filename: "client18.png" },
   { id: 19, name: "Client 19", filename: "client19.png" },
-  { id: 20, name: "Client 20", filename: "client20.png" },
+  { id: 20, name: "Client 20", filename: "client20.jpg" },
   { id: 21, name: "Client 21", filename: "client21.png" },
   { id: 22, name: "Client 22", filename: "client22.png" },
   { id: 23, name: "Client 23", filename: "client23.png" },

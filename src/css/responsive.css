@@ -898,6 +898,10 @@
 
 @media(max-width:500px){
 
+  .Copy p{
+    font-size: 14px ;
+  }
+
     .mvRow p{
         width: auto;
     }

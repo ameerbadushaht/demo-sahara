@@ -1,14 +1,12 @@
-
 import React, { useEffect, useState } from "react";
 import MainHeader from "../ReusableComponents/HomeReuse/MainHeader/MainHeader";
 import Sidebar from "../ReusableComponents/Sidebar";
 import CommonForm from "../ReusableComponents/CommonReuseComponents/CommonForm/CommonForm";
 import axios from "axios";
-import Header from '../ReusableComponents/Home-Header/Header'
-import useWindowWidth from '../hooks/useWindowWidth'; // Adjust the path as needed
+import Header from "../ReusableComponents/Home-Header/Header";
+import useWindowWidth from "../hooks/useWindowWidth"; // Adjust the path as needed
 
-import MobileHeader from '../ReusableComponents/Home-Header/Mobile-Header';
-
+import MobileHeader from "../ReusableComponents/Home-Header/Mobile-Header";
 
 function ProductEnquiry() {
   const [activeTab, setActiveTab] = useState("Qute1");
@@ -27,47 +25,45 @@ function ProductEnquiry() {
   const [stepsCompleted, setStepsCompleted] = useState({
     step1: false,
     step2: false,
-    step3: false
+    step3: false,
   });
 
   const width = useWindowWidth();
 
-
   // for form data
 
   const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    mobile: '',
-    email: '',
-    message: ''
+    name: "",
+    company: "",
+    mobile: "",
+    email: "",
+    message: "",
   });
-
-  
 
   useEffect(() => {
     const fetchPrinters = async () => {
       try {
         const response = await axios.get(
-          "https://saharaoffice-backend.onrender.com/api/getallproducts"
-        ,{ headers: { 'Content-Type': 'application/json' } });
-        
+          "https://saharaoffice-backend.onrender.com/api/getallproducts",
+          { headers: { "Content-Type": "application/json" } }
+        );
+
         // Access the products array from the response
         const products = response.data.products || [];
         setPrinters(products);
         if (products.length > 0) {
-            const first = products[0];
-            const itemPrice = Number(first.itemPrice) || 0;
-            setbaseCost(itemPrice)
-            setMonthlyCost(itemPrice );
-          }
+          const first = products[0];
+          const itemPrice = Number(first.itemPrice) || 0;
+          setbaseCost(itemPrice);
+          setMonthlyCost(itemPrice);
+        }
         // Set first printer as default selection if available
         if (products.length > 0) {
           setSelectedPrinter(products[0]._id);
           setCurrentPrinterData(products[0]);
           // Set initial values based on first printer
-          setBlackPrints(products[0].blackPrint );
-          setColorPrints(products[0].colorPrint );
+          setBlackPrints(products[0].blackPrint);
+          setColorPrints(products[0].colorPrint);
           setblackPrice(products[0].blackPrice);
           setcolorPrice(products[0].colorPrice);
         }
@@ -84,9 +80,6 @@ function ProductEnquiry() {
     fetchPrinters();
   }, []);
 
-
-
-
   const handleBlackPrintsChange = (e) => {
     const value = parseInt(e.target.value);
     setBlackPrints(value);
@@ -94,90 +87,83 @@ function ProductEnquiry() {
     const defaultBlackPages = Number(currentPrinterData.blackPrint) || 0; // 1000
     const defaultColorPages = Number(currentPrinterData.colorPrint) || 0; // 500
 
-    const differenceBlackPages = Number(value-defaultBlackPages )// 10
-    const differenceColorPages = Number(colorPrints - defaultColorPages) //0
+    const differenceBlackPages = Number(value - defaultBlackPages); // 10
+    const differenceColorPages = Number(colorPrints - defaultColorPages); //0
 
     const totalBlackPrice = differenceBlackPages * blackPrice; // 1000 *1
     const totalColorPrice = differenceColorPages * colorPrice; // 0*2
 
-    const total = (baseCost + totalBlackPrice + totalColorPrice) ;
+    const total = baseCost + totalBlackPrice + totalColorPrice;
 
-    if(total < baseCost){  
-        const difPrice = baseCost - total;
-        const pIcolor =difPrice/colorPrice
-        
-        const colorPrintsNum = Number(colorPrints);
-        const pIcolorNum = Math.ceil(Number(pIcolor));
-        
-        const newColorPrints = colorPrintsNum + pIcolorNum;
-        
-        // console.log(`${colorPrintsNum} + ${pIcolorNum} = ${newColorPrints}`);
-        
-        setColorPrints(newColorPrints);
+    if (total < baseCost) {
+      const difPrice = baseCost - total;
+      const pIcolor = difPrice / colorPrice;
 
-        setMonthlyCost(baseCost);
-        
-    }else{
-        calculateCost(value, colorPrints, currentPrinterData);
+      const colorPrintsNum = Number(colorPrints);
+      const pIcolorNum = Math.ceil(Number(pIcolor));
+
+      const newColorPrints = colorPrintsNum + pIcolorNum;
+
+      // console.log(`${colorPrintsNum} + ${pIcolorNum} = ${newColorPrints}`);
+
+      setColorPrints(newColorPrints);
+
+      setMonthlyCost(baseCost);
+    } else {
+      calculateCost(value, colorPrints, currentPrinterData);
     }
-
   };
 
   const handleColorPrintsChange = (e) => {
     const value = parseInt(e.target.value);
 
-    
     setColorPrints(value);
 
     const defaultBlackPages = Number(currentPrinterData.blackPrint) || 0; // 1000
     const defaultColorPages = Number(currentPrinterData.colorPrint) || 0; // 500
 
-    const differenceBlackPages = Number(blackPrints-defaultBlackPages )// 0
-    const differenceColorPages = Number(value - defaultColorPages) //10
+    const differenceBlackPages = Number(blackPrints - defaultBlackPages); // 0
+    const differenceColorPages = Number(value - defaultColorPages); //10
 
     const totalBlackPrice = differenceBlackPages * blackPrice; // 0 *1
     const totalColorPrice = differenceColorPages * colorPrice; // 10*2
 
-    const total = (baseCost + totalBlackPrice + totalColorPrice) ;
+    const total = baseCost + totalBlackPrice + totalColorPrice;
 
-    if(total < baseCost){  
-        const difPrice = baseCost - total;
-        const pIcolor =difPrice/blackPrice
-        
-        const blackPrintsNum = Number(blackPrints);
-        const pIblackNum = Math.ceil(Number(pIcolor));
-        
-        const newblackPrints = blackPrintsNum + pIblackNum;
-        
-        // console.log(`${blackPrintsNum} + ${pIblackNum} = ${newblackPrints}`);
-    
-        setBlackPrints(newblackPrints);
+    if (total < baseCost) {
+      const difPrice = baseCost - total;
+      const pIcolor = difPrice / blackPrice;
 
-        setMonthlyCost(baseCost);
-        
-    }else{
-        calculateCost(blackPrints, value, currentPrinterData);
+      const blackPrintsNum = Number(blackPrints);
+      const pIblackNum = Math.ceil(Number(pIcolor));
+
+      const newblackPrints = blackPrintsNum + pIblackNum;
+
+      // console.log(`${blackPrintsNum} + ${pIblackNum} = ${newblackPrints}`);
+
+      setBlackPrints(newblackPrints);
+
+      setMonthlyCost(baseCost);
+    } else {
+      calculateCost(blackPrints, value, currentPrinterData);
     }
   };
 
   const calculateCost = (black, color, printer) => {
-
     if (!printer) return;
 
     // Convert all values to numbers with fallbacks
-    const baseCost = Number(printer.itemPrice) ;
+    const baseCost = Number(printer.itemPrice);
 
-    setbaseCost(baseCost)
+    setbaseCost(baseCost);
     const defaultBlackPages = Number(printer.blackPrint) || 0;
-  
 
     const defaultColorPages = Number(printer.colorPrint) || 0;
-   
+
     const differenceBlackPages = Number(black - defaultBlackPages);
- 
 
     const differenceColorPages = Number(color - defaultColorPages) || 0;
- 
+
     const blackPrintCost = Number(blackPrice);
     // console.log(`blackPrintCost = Number(${blackPrice}) = ${blackPrintCost}`);
 
@@ -195,57 +181,48 @@ function ProductEnquiry() {
     const total = baseCost + totalBlackPrice + totalColorPrice;
     // console.log(`total = ${baseCost} + ${totalBlackPrice} + ${totalColorPrice} = ${total}`);
 
-
-
-
-    if(total < baseCost){  
+    if (total < baseCost) {
       setMonthlyCost(baseCost.toFixed(2));
-    }
-    else{
+    } else {
       setMonthlyCost(total.toFixed(2));
-    //   console.log();
-      
-
+      //   console.log();
     }
-
-   
   };
 
   const handleTabClick = (printerId) => {
     setSelectedPrinter(printerId);
-    const printer = printers.find(p => p._id === printerId);
+    const printer = printers.find((p) => p._id === printerId);
     setCurrentPrinterData(printer);
     // Reset prints to default values when changing printer
     setBlackPrints(printer.blackPrint || 1000);
     setColorPrints(printer.colorPrint || 500);
     setblackPrice(printer.blackPrice);
     setcolorPrice(printer.colorPrice);
-    calculateCost(
-      printer.blackPrint ,
-      printer.colorPrint,
-      printer
-    );
+    calculateCost(printer.blackPrint, printer.colorPrint, printer);
   };
-
-
 
   const openCity = (cityName) => {
     // Only allow navigation if previous steps are completed
     if (cityName === "Qute2" && !stepsCompleted.step1) return;
     if (cityName === "Qute3" && !stepsCompleted.step2) return;
     setActiveTab(cityName);
-
-};
+  };
 
   const handleFormSubmitSuccess = (data) => {
     setFormData(data);
-    setStepsCompleted(prev => ({...prev, step1: true}));
+    setStepsCompleted((prev) => ({ ...prev, step1: true }));
     setActiveTab("Qute2");
   };
-  
+
   const handlePrinterSelectionComplete = () => {
-    setStepsCompleted(prev => ({...prev, step2: true}));
+    setStepsCompleted((prev) => ({ ...prev, step2: true }));
     setActiveTab("Qute3");
+     setTimeout(() => {
+    const el = document.getElementById("Qute3");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 100); // delay to wait for render
   };
 
   return (
@@ -253,7 +230,6 @@ function ProductEnquiry() {
       <main className="PrntrMain">
         {/* <MainHeader /> */}
         {width >= 1000 ? <Header /> : <MobileHeader />}
-
         <Sidebar />/
         <section className="MainContainer">
           <div className="container">
@@ -268,10 +244,7 @@ function ProductEnquiry() {
             </div>
           </div>
         </section>
-
-
-
-        <section className="Qte-container"  >
+        <section className="Qte-container">
           <div className="container">
             <div className="pre-qute">
               <div className="qute-head">
@@ -291,22 +264,28 @@ function ProductEnquiry() {
                   data-aos-duration="1000"
                 >
                   <button
-                    className={`tablinks ${activeTab === "Qute1" ? "active" : ""}`}
+                    className={`tablinks ${
+                      activeTab === "Qute1" ? "active" : ""
+                    }`}
                     onClick={() => openCity("Qute1")}
                   >
                     1
                   </button>
                   <button
-                     className={`tablinks ${activeTab === "Qute2" ? "active" : ""} ${!stepsCompleted.step1 ? 'disabled' : ''}`}
-                     onClick={() => openCity("Qute2")}
-                     disabled={!stepsCompleted.step1}
+                    className={`tablinks ${
+                      activeTab === "Qute2" ? "active" : ""
+                    } ${!stepsCompleted.step1 ? "disabled" : ""}`}
+                    onClick={() => openCity("Qute2")}
+                    disabled={!stepsCompleted.step1}
                   >
                     2
                   </button>
                   <button
-                     className={`tablinks ${activeTab === "Qute3" ? "active" : ""} ${!stepsCompleted.step2 ? 'disabled' : ''}`}
-                     onClick={() => openCity("Qute3")}
-                     disabled={!stepsCompleted.step2}
+                    className={`tablinks ${
+                      activeTab === "Qute3" ? "active" : ""
+                    } ${!stepsCompleted.step2 ? "disabled" : ""}`}
+                    onClick={() => openCity("Qute3")}
+                    disabled={!stepsCompleted.step2}
                   >
                     3
                   </button>
@@ -318,17 +297,12 @@ function ProductEnquiry() {
                     className="tabcontent"
                     style={{ display: "block" }}
                   >
-                    <CommonForm   onSubmitSuccess={handleFormSubmitSuccess}  />
+                    <CommonForm onSubmitSuccess={handleFormSubmitSuccess} />
                   </div>
                 )}
 
-
                 {activeTab === "Qute2" && (
-                  <div
-                    id="Qute2"
-                    className="tabcontent"
-                   
-                  >
+                  <div id="Qute2" className="tabcontent">
                     <div className="Qut-cnt">
                       <p>
                         Instead of purchasing a printer, you can rent your
@@ -391,7 +365,7 @@ function ProductEnquiry() {
                                     style={{ display: "block" }}
                                   >
                                     <div className="PrnDesc">
-                                      <div className="DescRow" >
+                                      <div className="DescRow">
                                         <div className="dscrption">
                                           <div
                                             className="DescSec"
@@ -405,16 +379,19 @@ function ProductEnquiry() {
                                               />
                                             </div>
 
-
                                             <div className="PrntrDetails">
                                               <h3>{printer.productFullName}</h3>
                                               <ul>
-                                               {printer.features.slice(0, 4).map((feature, index) => (
-                                                <li key={index}>
-                                                    <span>{feature.title}</span> - {feature.detail}
-                                                </li>
-                                                ))}
-
+                                                {printer.features
+                                                  .slice(0, 4)
+                                                  .map((feature, index) => (
+                                                    <li key={index}>
+                                                      <span>
+                                                        {feature.title}
+                                                      </span>{" "}
+                                                      - {feature.detail}
+                                                    </li>
+                                                  ))}
                                               </ul>
                                             </div>
                                           </div>
@@ -425,46 +402,17 @@ function ProductEnquiry() {
                                             data-aos="fade-up"
                                             data-aos-duration="1000"
                                           >
-                                            <div >
-                                              {/* <div className="DetlList">
-                                                <li className="DescList">
-                                                  Brand
-                                                </li>
-                                                <li>- {printer.brand}</li>
-                                              </div> */}
-                                              {/* <div className="DetlList">
-                                                <li className="DescList">
-                                                  Connectivity technology
-                                                </li>
-                                                <li>
-                                                  - {printer.connectivity}
-                                                </li>
-                                              </div> */}
-                                              {/* <div className="DetlList">
-                                                <li className="DescList">
-                                                  Printing technology
-                                                </li>
-                                                <li>
-                                                  - {printer.connectivity}
-                                                </li>
-                                              </div> */}
+                                            <div>
                                               <div className="DetlList">
                                                 <li className="DescList">
-                                                  Functions 
+                                                  Functions
                                                 </li>
-                                                <li>
-                                                  - {printer.functions}
-                                                </li>
+                                                <li>- {printer.functions}</li>
                                               </div>
-                                              {/* <div className="DetlList">
-                                                <li className="DescList">
-                                                  Colour
-                                                </li>
-                                                <li>- {printer.color}</li>
-                                              </div> */}
+
                                               <div className="DetlList">
                                                 <li className="DescList">
-                                                 Make and Model
+                                                  Make and Model
                                                 </li>
                                                 <li>- {printer.makeModel}</li>
                                               </div>
@@ -472,39 +420,14 @@ function ProductEnquiry() {
                                                 <li className="DescList">
                                                   Output
                                                 </li>
-                                                <li>
-                                                  - {printer.output}
-                                                </li>
+                                                <li>- {printer.output}</li>
                                               </div>
                                               <div className="DetlList">
                                                 <li className="DescList">
-                                                 Speed
+                                                  Speed
                                                 </li>
-                                                <li>
-                                                  - {printer.speed}{" "}
-                                                </li>
+                                                <li>- {printer.speed} </li>
                                               </div>
-                                              {/* <div className="DetlList">
-                                                <li className="DescList">
-                                                  Max. monochrome printing speed
-                                                </li>
-                                                <li>
-                                                  -{" "}
-                                                  {
-                                                    printer.maxPrintSpeedMonochrome
-                                                  }{" "}ppm
-                                                  
-                                                </li>
-                                              </div> */}
-                                              {/* <div className="DetlList">
-                                                <li className="DescList">
-                                                  Item weight
-                                                </li>
-                                                <li>
-                                                  - {printer.itemWeight}{" "}kg
-                                                 
-                                                </li>
-                                              </div> */}
                                             </div>
                                           </div>
                                         </div>
@@ -518,69 +441,61 @@ function ProductEnquiry() {
                       </div>
                     </div>
 
-
-
-
                     {currentPrinterData && (
-
-                    <div className="totalCount">
-                      <h3>
-                        Enter here how many pages you print about every month
-                      </h3>
-                      <div className="itemCalc">
-                        <div className="row ">
-                          <div className="col-md-8">
-                            <div className="range">
-                              <input
-                                type="range"
-                                value={blackPrints}
-                                min="0"
-                                max="5000"
-                                step={currentPrinterData.slideRange}
-                                onChange={handleBlackPrintsChange}
-                                id="range1"
-                              />
-                              <label id="label1">
-                                {blackPrints} black prints
-                              </label>
+                      <div className="totalCount">
+                        <h3>
+                          Enter here how many pages you print about every month
+                        </h3>
+                        <div className="itemCalc">
+                          <div className="row ">
+                            <div className="col-md-8">
+                              <div className="range">
+                                <input
+                                  type="range"
+                                  value={blackPrints}
+                                  min="0"
+                                  max="5000"
+                                  step={currentPrinterData.slideRange}
+                                  onChange={handleBlackPrintsChange}
+                                  id="range1"
+                                />
+                                <label id="label1">
+                                  {blackPrints} black prints
+                                </label>
+                              </div>
+                              <div className="range">
+                                <input
+                                  type="range"
+                                  value={colorPrints}
+                                  min="0"
+                                  step={currentPrinterData.slideRange}
+                                  max="5000"
+                                  onChange={handleColorPrintsChange}
+                                />
+                                <label id="label2">
+                                  {colorPrints} color prints
+                                </label>
+                              </div>
                             </div>
-                            <div className="range">
-                              <input
-                                type="range"
-                                value={colorPrints}
-                                min="0"
-                                step={currentPrinterData.slideRange}
-                                max="5000"
-                                onChange={handleColorPrintsChange}
-                              />
-                              <label id="label2">
-                                {colorPrints} color prints
-                              </label>
+                            <div className="col-md-4">
+                              <div className="AmntPrn">
+                                <h2>
+                                  {monthlyCost}
+                                  <span>DHS</span>
+                                </h2>
+                              </div>
                             </div>
                           </div>
-                          <div className="col-md-4">
-                            <div className="AmntPrn">
-                            <h2>
-                                {monthlyCost}
-                                <span>DHS</span>
-                            </h2>
-
-                            </div>
+                          <div className=" nxtBtn">
+                            <button onClick={handlePrinterSelectionComplete}>
+                              Next
+                            </button>
                           </div>
-                        </div>
-                        <div className=" nxtBtn">
-                        <button onClick={handlePrinterSelectionComplete}>Next</button>
                         </div>
                       </div>
-                    </div>
-
-)}
-
-
-                    
+                    )}
                   </div>
                 )}
-
 
                 {activeTab === "Qute3" && (
                   <div
@@ -604,98 +519,66 @@ function ProductEnquiry() {
                         </p>
                       </div>
                       {currentPrinterData && (
-                      <div
-                        className="recmnd"
-                        data-aos="fade-up"
-                        data-aos-duration="1000"
-                      >
-                        <p>Recommended System</p>
-                        <h2>{currentPrinterData.productFullName}</h2>
-                        <div className="system">
-                          <img src={currentPrinterData.img} alt={currentPrinterData.title} />
-                        </div>
-                        <p>The print volume you have chosen</p>
-                        <div className="prntVolm">
-                          <div
-                            className="volume"
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                          >
-                            <p>Black Prints</p>
-                            <h3>{blackPrints} Pages</h3>
-                          </div>
-                          <div
-                            className="volume"
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                          >
-                            <p>Color Prints</p>
-                            <h3>{colorPrints} Pages</h3>
-                          </div>
-                          <div
-                            className="volume"
-                            data-aos="fade-up"
-                            data-aos-duration="1000"
-                          >
-                            <p>Cost</p>
-                            <h3>
-                            {monthlyCost} <span>DHS</span>
-                            </h3>
-                          </div>
-                        </div>
                         <div
-                          className="sndBtns"
+                          className="recmnd"
                           data-aos="fade-up"
                           data-aos-duration="1000"
                         >
-                          {/* <div className="btnSnd">
-                          <a href="#" onClick={(e) => {
-                                e.preventDefault();
-
-                                const payload = {
-                                    name: formData?.name,
-                                    email: formData?.email,
-                                    mobile: formData?.mobile,
-                                    company: formData?.company,
-                                    message: formData?.message,
-                                    productFullName: currentPrinterData?.productFullName,
-                                    blackPrints,
-                                    colorPrints,
-                                    monthlyCost,
-                                };
-
-                                setLoading(true);
-                                // axios.post('https://saharaoffice-backend.onrender.com/api/email/send-email-to-customer', payload)
-                                axios.post('http://localhost:5000/api/email/send-email-to-customer', payload)
-                                    .then(response => {
-                                    const data = response.data;
-                                    if (data.success) {
-                                        alert("Email sent successfully!");
-                                    } else {
-                                        alert("Email failed to send.");
-                                    }
-                                    })
-                                    .catch(error => {
-                                    console.error("Axios email send error:", error);
-                                    alert("Error sending email.");
-                                    });
-                                }}>
-                                <img src="/assets/Quote/SntMail.png" alt="" /> Send to Email
-                            </a>
-                          </div> */}
-
-                          <div className="btnSnd">
-                            <button
+                          <p>Recommended System</p>
+                          <h2>{currentPrinterData.productFullName}</h2>
+                          <div className="system">
+                            <img
+                              src={currentPrinterData.img}
+                              alt={currentPrinterData.title}
+                            />
+                          </div>
+                          <p>The print volume you have chosen</p>
+                          <div className="prntVolm">
+                            <div
+                              className="volume"
+                              data-aos="fade-up"
+                              data-aos-duration="1000"
+                            >
+                              <p>Black Prints</p>
+                              <h3>{blackPrints} Pages</h3>
+                            </div>
+                            <div
+                              className="volume"
+                              data-aos="fade-up"
+                              data-aos-duration="1000"
+                            >
+                              <p>Color Prints</p>
+                              <h3>{colorPrints} Pages</h3>
+                            </div>
+                            <div
+                              className="volume"
+                              data-aos="fade-up"
+                              data-aos-duration="1000"
+                            >
+                              <p>Cost</p>
+                              <h3>
+                                {monthlyCost} <span>DHS</span>
+                              </h3>
+                            </div>
+                          </div>
+                          <div
+                            className="sndBtns"
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                          >
+                            <div className="btnSnd">
+                              <button
                                 onClick={async (e) => {
-                                e.preventDefault();
+                                  e.preventDefault();
 
-                                const payload = {
+                                  const payload = {
                                     name: formData?.name,
                                     email: formData?.email,
                                     mobile: formData?.mobile,
                                     company: formData?.company,
                                     message: formData?.message,
-                                    productFullName: currentPrinterData?.productFullName,
+                                    productFullName:
+                                      currentPrinterData?.productFullName,
                                     blackPrints,
                                     colorPrints,
                                     monthlyCost,
@@ -703,77 +586,96 @@ function ProductEnquiry() {
                                     functions: currentPrinterData?.functions,
                                     output: currentPrinterData?.output,
                                     speed: currentPrinterData?.speed,
-                                };
+                                  };
 
-                                try {
+                                  try {
                                     setLoading(true);
                                     const response = await axios.post(
-                                    // 'http://localhost:5000/api/email/send-email-to-customer',
-                                    'https://saharaoffice-backend.onrender.com/api/email/send-email-to-customer',
-                                    payload
+                                      // 'http://localhost:5000/api/email/send-email-to-customer',
+                                      "https://saharaoffice-backend.onrender.com/api/email/send-email-to-customer",
+                                      payload
                                     );
 
                                     const data = response.data;
                                     if (data.success) {
-                                    alert("Email sent successfully!");
+                                      alert("Email sent successfully!");
                                     } else {
-                                    alert("Email failed to send.");
+                                      alert("Email failed to send.");
                                     }
-                                } catch (error) {
-                                    console.error("Axios email send error:", error);
+                                  } catch (error) {
+                                    console.error(
+                                      "Axios email send error:",
+                                      error
+                                    );
                                     alert("Error sending email.");
-                                } finally {
+                                  } finally {
                                     setLoading(false); // ✅ Ensures loading is reset on both success & error
-                                }
+                                  }
                                 }}
                                 disabled={loading}
-                                style={{ cursor: loading ? 'not-allowed' : 'pointer' }}
-                            >
+                                style={{
+                                  cursor: loading ? "not-allowed" : "pointer",
+                                }}
+                              >
                                 {loading ? (
-                                <>
-                                     Sending...
-                                </>
+                                  <>Sending...</>
                                 ) : (
-                                <>
-                                    <img src="/assets/Quote/SntMail.png" alt="Send Email" /> Send to Email
-                                </>
+                                  <>
+                                    <img
+                                      src="/assets/Quote/SntMail.png"
+                                      alt="Send Email"
+                                    />{" "}
+                                    Send to Email
+                                  </>
                                 )}
-                            </button>
+                              </button>
                             </div>
-                          <div className="btnSnd wtsapp">
-                          <a 
-                            href={`https://wa.me/${formData.mobile}?text=${encodeURIComponent(
-                            `*Printer Quote Request*\n\n` +
-                            `*Printer Selection:*\n` +
-                            `Model: ${currentPrinterData?.productFullName || 'Not selected'}\n\n` +
-                            `*Print Volume:*\n` +
-                            `Black Prints: ${blackPrints} pages\n` +
-                            `Color Prints: ${colorPrints} pages\n\n` +
-                            `*Printer Features:*\n` +
-                            `Make/Model: ${currentPrinterData?.makeModel || 'Not selected'}\n` +
-                            `Functions: ${currentPrinterData?.functions || 'Not selected'}\n` +
-                            `Output: ${currentPrinterData?.output || 'Not selected'}\n` +
-                            `Speed: ${currentPrinterData?.speed || 'Not selected'}\n\n` +
-                            `*Monthly Cost:* AED ${monthlyCost}`
-                            )}`} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                        >
-                              <img src="/assets/Quote/whatsapp.png" alt="" />{" "}
-                              Send to Whatsapp
-                            </a>
+                            <div className="btnSnd wtsapp">
+                              <a
+                                href={`https://wa.me/${
+                                  formData.mobile
+                                }?text=${encodeURIComponent(
+                                  `*Printer Quote Request*\n\n` +
+                                    `*Printer Selection:*\n` +
+                                    `Model: ${
+                                      currentPrinterData?.productFullName ||
+                                      "Not selected"
+                                    }\n\n` +
+                                    `*Print Volume:*\n` +
+                                    `Black Prints: ${blackPrints} pages\n` +
+                                    `Color Prints: ${colorPrints} pages\n\n` +
+                                    `*Printer Features:*\n` +
+                                    `Make/Model: ${
+                                      currentPrinterData?.makeModel ||
+                                      "Not selected"
+                                    }\n` +
+                                    `Functions: ${
+                                      currentPrinterData?.functions ||
+                                      "Not selected"
+                                    }\n` +
+                                    `Output: ${
+                                      currentPrinterData?.output ||
+                                      "Not selected"
+                                    }\n` +
+                                    `Speed: ${
+                                      currentPrinterData?.speed ||
+                                      "Not selected"
+                                    }\n\n` +
+                                    `*Monthly Cost:* AED ${monthlyCost}`
+                                )}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <img src="/assets/Quote/whatsapp.png" alt="" />{" "}
+                                Send to Whatsapp
+                              </a>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                        )}
+                      )}
                     </div>
                   </div>
                 )}
-
-
-
-
-                
               </div>
             </div>
           </div>
@@ -785,11 +687,6 @@ function ProductEnquiry() {
 
 export default ProductEnquiry;
 
-
-
-
-
-
 // import React, { useEffect, useState } from "react";
 // import MainHeader from "../ReusableComponents/HomeReuse/MainHeader/MainHeader";
 // import Sidebar from "../ReusableComponents/Sidebar";
@@ -799,7 +696,6 @@ export default ProductEnquiry;
 // import useWindowWidth from '../hooks/useWindowWidth'; // Adjust the path as needed
 
 // import MobileHeader from '../ReusableComponents/Home-Header/Mobile-Header';
-
 
 // function ProductEnquiry() {
 //   const [activeTab, setActiveTab] = useState("Qute1");
@@ -812,8 +708,6 @@ export default ProductEnquiry;
 //   const [colorPrice, setcolorPrice] = useState(0);
 //   const [isEditingCost, setIsEditingCost] = useState(false);
 //   const [editedCost, setEditedCost] = useState(monthlyCost);
-  
-
 
 //   const [printers, setPrinters] = useState([]);
 //   const [loading, setLoading] = useState(true);
@@ -827,7 +721,6 @@ export default ProductEnquiry;
 
 //   const width = useWindowWidth();
 
-
 //   // for form data
 
 //   const [formData, setFormData] = useState({
@@ -838,15 +731,13 @@ export default ProductEnquiry;
 //     message: ''
 //   });
 
-  
-
 //   useEffect(() => {
 //     const fetchPrinters = async () => {
 //       try {
 //         const response = await axios.get(
 //           "https://sahara-backend-tubt.onrender.com/api/getallproducts"
 //         );
-        
+
 //         // Access the products array from the response
 //         const products = response.data.products || [];
 //         setPrinters(products);
@@ -879,9 +770,6 @@ export default ProductEnquiry;
 //     fetchPrinters();
 //   }, []);
 
-
-
-
 //   const handleBlackPrintsChange = (e) => {
 //     const value = parseInt(e.target.value);
 //     setBlackPrints(value);
@@ -897,21 +785,21 @@ export default ProductEnquiry;
 
 //     const total = (baseCost + totalBlackPrice + totalColorPrice) ;
 
-//     if(total < baseCost){  
+//     if(total < baseCost){
 //         const difPrice = baseCost - total;
 //         const pIcolor =difPrice/colorPrice
-        
+
 //         const colorPrintsNum = Number(colorPrints);
 //         const pIcolorNum = Math.ceil(Number(pIcolor));
-        
+
 //         const newColorPrints = colorPrintsNum + pIcolorNum;
-        
+
 //         // console.log(`${colorPrintsNum} + ${pIcolorNum} = ${newColorPrints}`);
-        
+
 //         setColorPrints(newColorPrints);
 
 //         setMonthlyCost(baseCost);
-        
+
 //     }else{
 //         calculateCost(value, colorPrints, currentPrinterData);
 //     }
@@ -921,7 +809,6 @@ export default ProductEnquiry;
 //   const handleColorPrintsChange = (e) => {
 //     const value = parseInt(e.target.value);
 
-    
 //     setColorPrints(value);
 
 //     const defaultBlackPages = Number(currentPrinterData.dbp) || 0; // 1000
@@ -935,21 +822,21 @@ export default ProductEnquiry;
 
 //     const total = (baseCost + totalBlackPrice + totalColorPrice) ;
 
-//     if(total < baseCost){  
+//     if(total < baseCost){
 //         const difPrice = baseCost - total;
 //         const pIcolor =difPrice/blackPrice
-        
+
 //         const blackPrintsNum = Number(blackPrints);
 //         const pIblackNum = Math.ceil(Number(pIcolor));
-        
+
 //         const newblackPrints = blackPrintsNum + pIblackNum;
-        
+
 //         // console.log(`${blackPrintsNum} + ${pIblackNum} = ${newblackPrints}`);
-    
+
 //         setBlackPrints(newblackPrints);
 
 //         setMonthlyCost(baseCost);
-        
+
 //     }else{
 //         calculateCost(blackPrints, value, currentPrinterData);
 //     }
@@ -958,15 +845,12 @@ export default ProductEnquiry;
 //   const handleCostEditSubmit = () => {
 //     const newCost = Number(editedCost);
 //     if (!currentPrinterData) return;
-  
+
 //     // const base = Number(currentPrinterData.itemPrice);
 //     const blackUnit = Number(blackPrice);
 //     const colorUnit = Number(colorPrice);
 //     // const defaultBlack = Number(currentPrinterData.dbp);
 //     // const defaultColor = Number(currentPrinterData.dcp);
-  
-
-  
 
 //   let perPage= newCost/2;
 //   console.log("perPage",perPage);
@@ -976,20 +860,15 @@ export default ProductEnquiry;
 
 //   const blackPages = Math.ceil(perPageBlack / blackUnit);
 //   console.log("blackPages", blackPages);
-  
+
 //   const colorPages = Math.ceil(perPageColor / colorUnit);
 //   console.log("colorPages", colorPages);
-  
-  
 
-  
 //     setBlackPrints(blackPages);
 //     setColorPrints(colorPages);
 //     setMonthlyCost(newCost);
 //     setIsEditingCost(false);
 //   };
-  
-  
 
 //   const calculateCost = (black, color, printer) => {
 
@@ -999,22 +878,22 @@ export default ProductEnquiry;
 //     const baseCost = Number(printer.itemPrice) ;
 
 //     setbaseCost(baseCost)
-    
+
 //     const defaultBlackPages = Number(printer.dbp) || 0; // default black pages
 //     const defaultColorPages = Number(printer.dcp) || 0; // default color pages
 //     const differenceBlackPages = Number(black-defaultBlackPages )// user input black pages = 10
 //     const differenceColorPages = Number(color - defaultColorPages) || 0; // user input color pages
-    
+
 //     const blackPrintCost = Number(blackPrice) ;  // unit black
 //     const colorPrintCost = Number(colorPrice) ;   // unit color
 
-//     // calculation 
+//     // calculation
 
 //     const totalBlackPrice = differenceBlackPages * blackPrintCost; // cost per page for black
 //     const totalColorPrice = differenceColorPages * colorPrintCost; // cost per page for color
 
 //     const total = (baseCost + totalBlackPrice + totalColorPrice) ;
-//     if(total < baseCost){  
+//     if(total < baseCost){
 //       setMonthlyCost(baseCost.toFixed(2));
 //     }
 //     else{
@@ -1022,7 +901,6 @@ export default ProductEnquiry;
 
 //     }
 
-   
 //   };
 
 //   const handleTabClick = (printerId) => {
@@ -1041,8 +919,6 @@ export default ProductEnquiry;
 //     );
 //   };
 
-
-
 //   const openCity = (cityName) => {
 //     // Only allow navigation if previous steps are completed
 //     if (cityName === "Qute2" && !stepsCompleted.step1) return;
@@ -1056,7 +932,7 @@ export default ProductEnquiry;
 //     setStepsCompleted(prev => ({...prev, step1: true}));
 //     setActiveTab("Qute2");
 //   };
-  
+
 //   const handlePrinterSelectionComplete = () => {
 //     setStepsCompleted(prev => ({...prev, step2: true}));
 //     setActiveTab("Qute3");
@@ -1082,8 +958,6 @@ export default ProductEnquiry;
 //             </div>
 //           </div>
 //         </section>
-
-
 
 //         <section className="Qte-container"  >
 //           <div className="container">
@@ -1136,17 +1010,11 @@ export default ProductEnquiry;
 //                   </div>
 //                 )}
 
-
-
-
-
-
-
 //                 {activeTab === "Qute2" && (
 //                   <div
 //                     id="Qute2"
 //                     className="tabcontent"
-                   
+
 //                   >
 //                     <div className="Qut-cnt">
 //                       <p>
@@ -1223,7 +1091,6 @@ export default ProductEnquiry;
 //                                                 alt={printer.title}
 //                                               />
 //                                             </div>
-
 
 //                                             <div className="PrntrDetails">
 //                                               <h3>{printer.productFullName}</h3>
@@ -1305,7 +1172,7 @@ export default ProductEnquiry;
 //                                                 </li>
 //                                                 <li>
 //                                                   - {printer.maxPrintSpeedColor}{" "}ppm
-                                                 
+
 //                                                 </li>
 //                                               </div>
 //                                               <div className="DetlList">
@@ -1317,7 +1184,7 @@ export default ProductEnquiry;
 //                                                   {
 //                                                     printer.maxPrintSpeedMonochrome
 //                                                   }{" "}ppm
-                                                  
+
 //                                                 </li>
 //                                               </div>
 //                                               <div className="DetlList">
@@ -1326,7 +1193,7 @@ export default ProductEnquiry;
 //                                                 </li>
 //                                                 <li>
 //                                                   - {printer.itemWeight}{" "}kg
-                                                 
+
 //                                                 </li>
 //                                               </div>
 //                                             </div>
@@ -1341,9 +1208,6 @@ export default ProductEnquiry;
 //                         )}
 //                       </div>
 //                     </div>
-
-
-
 
 //                     {currentPrinterData && (
 
@@ -1401,7 +1265,6 @@ export default ProductEnquiry;
 //                             </h2>
 //                             )}
 
-
 //                             </div>
 //                           </div>
 //                         </div>
@@ -1413,11 +1276,8 @@ export default ProductEnquiry;
 
 //                     )}
 
-
-                    
 //                   </div>
 //                 )}
-
 
 //                 {activeTab === "Qute3" && (
 //                   <div
@@ -1501,7 +1361,6 @@ export default ProductEnquiry;
 //                                     monthlyCost,
 //                                 };
 
-                       
 //                                 axios.post('https://sahara-backend-tubt.onrender.com/api/email/send-email', payload)
 //                                     .then(response => {
 //                                     const data = response.data;
@@ -1520,7 +1379,7 @@ export default ProductEnquiry;
 //                             </a>
 //                           </div>
 //                           <div className="btnSnd wtsapp">
-//                           <a 
+//                           <a
 //                             href={`https://wa.me/+971503823969?text=${encodeURIComponent(
 //                             `*Printer Quote Request*\n\n` +
 //                             `*Customer Details:*\n` +
@@ -1535,8 +1394,8 @@ export default ProductEnquiry;
 //                             `Black Prints: ${blackPrints} pages\n` +
 //                             `Color Prints: ${colorPrints} pages\n\n` +
 //                             `*Monthly Cost:* ${monthlyCost} DHS`
-//                             )}`} 
-//                             target="_blank" 
+//                             )}`}
+//                             target="_blank"
 //                             rel="noopener noreferrer"
 //                         >
 //                               <img src="/assets/Quote/whatsapp.png" alt="" />{" "}
@@ -1550,10 +1409,6 @@ export default ProductEnquiry;
 //                   </div>
 //                 )}
 
-
-
-
-                
 //               </div>
 //             </div>
 //           </div>

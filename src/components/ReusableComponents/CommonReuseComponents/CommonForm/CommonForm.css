@@ -67,3 +67,9 @@
   .react-tel-input .country-list .country{
     text-align: left !important;
   }
+
+  @media(max-width:500px){
+ .react-tel-input .form-control{
+    background: none;
+ width: auto;;
+  }}

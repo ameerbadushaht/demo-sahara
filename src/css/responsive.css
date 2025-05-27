@@ -903,7 +903,10 @@
 }
 
 @media(max-width:500px){
-
+ .react-tel-input .form-control{
+    background: none;
+ width: auto;;
+  }
     .TabImg h3 {
     font-size: 13px;
 }

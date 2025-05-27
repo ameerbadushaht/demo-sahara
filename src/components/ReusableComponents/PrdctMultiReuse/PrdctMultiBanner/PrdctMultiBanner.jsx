@@ -18,7 +18,7 @@ function PrdctMultiBanner() {
       if (!productId) return;
 
       try {
-        const response = await fetch(`https://sahara-backend-tubt.onrender.com/api/get/${productId}`);
+        const response = await fetch(`https://saharaoffice-backend.onrender.com/api/get/${productId}`,{ headers: { 'Content-Type': 'application/json' } });
         const data = await response.json();
         if (data.success) {
           setProduct(data.product);

@@ -49,8 +49,8 @@ function ProductEnquiry() {
     const fetchPrinters = async () => {
       try {
         const response = await axios.get(
-          "https://sahara-backend-tubt.onrender.com/api/getallproducts"
-        );
+          "https://saharaoffice-backend.onrender.com/api/getallproducts"
+        ,{ headers: { 'Content-Type': 'application/json' } });
         
         // Access the products array from the response
         const products = response.data.products || [];
@@ -168,39 +168,16 @@ function ProductEnquiry() {
     const baseCost = Number(printer.itemPrice) ;
 
     setbaseCost(baseCost)
-    
-    // const defaultBlackPages = Number(printer.blackPrint) || 0; // default black pages
-    // const defaultColorPages = Number(printer.colorPrint) || 0; // default color pages
-    // const differenceBlackPages = Number(black-defaultBlackPages )// user input black pages = 10
-    // const differenceColorPages = Number(color - defaultColorPages) || 0; // user input color pages
-    
-    // const blackPrintCost = Number(blackPrice) ;  // unit black
-    // const colorPrintCost = Number(colorPrice) ;   // unit color
-
-    // // calculation 
-
-    // const totalBlackPrice = differenceBlackPages * blackPrintCost; // cost per page for black
-    // const totalColorPrice = differenceColorPages * colorPrintCost; // cost per page for color
-
-    // const total = (baseCost + totalBlackPrice + totalColorPrice) ;
-
-
-
     const defaultBlackPages = Number(printer.blackPrint) || 0;
-    // console.log(`defaultBlackPages = Number(${printer.blackPrint}) || 0 = ${defaultBlackPages}`);
+  
 
     const defaultColorPages = Number(printer.colorPrint) || 0;
-    // console.log(`defaultColorPages = Number(${printer.colorPrint}) || 0 = ${defaultColorPages}`);
-
-    // console.log(`User Input - black = ${black}`);
-    // console.log(`User Input - color = ${color}`);
-
+   
     const differenceBlackPages = Number(black - defaultBlackPages);
-    // console.log(`differenceBlackPages = ${black} - ${defaultBlackPages} = ${differenceBlackPages}`);
+ 
 
     const differenceColorPages = Number(color - defaultColorPages) || 0;
-    // console.log(`differenceColorPages = ${color} - ${defaultColorPages} = ${differenceColorPages}`);
-
+ 
     const blackPrintCost = Number(blackPrice);
     // console.log(`blackPrintCost = Number(${blackPrice}) = ${blackPrintCost}`);
 
@@ -671,7 +648,7 @@ function ProductEnquiry() {
                           data-aos="fade-up"
                           data-aos-duration="1000"
                         >
-                          <div className="btnSnd">
+                          {/* <div className="btnSnd">
                           <a href="#" onClick={(e) => {
                                 e.preventDefault();
 
@@ -687,8 +664,9 @@ function ProductEnquiry() {
                                     monthlyCost,
                                 };
 
-                       
-                                axios.post('https://sahara-backend-tubt.onrender.com/api/email/send-email', payload)
+                                setLoading(true);
+                                // axios.post('https://saharaoffice-backend.onrender.com/api/email/send-email-to-customer', payload)
+                                axios.post('http://localhost:5000/api/email/send-email-to-customer', payload)
                                     .then(response => {
                                     const data = response.data;
                                     if (data.success) {
@@ -704,23 +682,79 @@ function ProductEnquiry() {
                                 }}>
                                 <img src="/assets/Quote/SntMail.png" alt="" /> Send to Email
                             </a>
-                          </div>
+                          </div> */}
+
+                          <div className="btnSnd">
+                            <button
+                                onClick={async (e) => {
+                                e.preventDefault();
+
+                                const payload = {
+                                    name: formData?.name,
+                                    email: formData?.email,
+                                    mobile: formData?.mobile,
+                                    company: formData?.company,
+                                    message: formData?.message,
+                                    productFullName: currentPrinterData?.productFullName,
+                                    blackPrints,
+                                    colorPrints,
+                                    monthlyCost,
+                                    makeModel: currentPrinterData?.makeModel,
+                                    functions: currentPrinterData?.functions,
+                                    output: currentPrinterData?.output,
+                                    speed: currentPrinterData?.speed,
+                                };
+
+                                try {
+                                    setLoading(true);
+                                    const response = await axios.post(
+                                    // 'http://localhost:5000/api/email/send-email-to-customer',
+                                    'https://saharaoffice-backend.onrender.com/api/email/send-email-to-customer',
+                                    payload
+                                    );
+
+                                    const data = response.data;
+                                    if (data.success) {
+                                    alert("Email sent successfully!");
+                                    } else {
+                                    alert("Email failed to send.");
+                                    }
+                                } catch (error) {
+                                    console.error("Axios email send error:", error);
+                                    alert("Error sending email.");
+                                } finally {
+                                    setLoading(false); // ✅ Ensures loading is reset on both success & error
+                                }
+                                }}
+                                disabled={loading}
+                                style={{ cursor: loading ? 'not-allowed' : 'pointer' }}
+                            >
+                                {loading ? (
+                                <>
+                                     Sending...
+                                </>
+                                ) : (
+                                <>
+                                    <img src="/assets/Quote/SntMail.png" alt="Send Email" /> Send to Email
+                                </>
+                                )}
+                            </button>
+                            </div>
                           <div className="btnSnd wtsapp">
                           <a 
-                            href={`https://wa.me/971503823969?text=${encodeURIComponent(
+                            href={`https://wa.me/${formData.mobile}?text=${encodeURIComponent(
                             `*Printer Quote Request*\n\n` +
-                            `*Customer Details:*\n` +
-                            `Name: ${formData.name || 'Not provided'}\n` +
-                            `Email: ${formData.email || 'Not provided'}\n` +
-                            `Phone: ${formData.mobile || 'Not provided'}\n` +
-                            `Company: ${formData.company || 'Not provided'}\n` +
-                            `Message: ${formData.message || 'No additional message'}\n\n` +
                             `*Printer Selection:*\n` +
                             `Model: ${currentPrinterData?.productFullName || 'Not selected'}\n\n` +
                             `*Print Volume:*\n` +
                             `Black Prints: ${blackPrints} pages\n` +
                             `Color Prints: ${colorPrints} pages\n\n` +
-                            `*Monthly Cost:* ${monthlyCost} DHS`
+                            `*Printer Features:*\n` +
+                            `Make/Model: ${currentPrinterData?.makeModel || 'Not selected'}\n` +
+                            `Functions: ${currentPrinterData?.functions || 'Not selected'}\n` +
+                            `Output: ${currentPrinterData?.output || 'Not selected'}\n` +
+                            `Speed: ${currentPrinterData?.speed || 'Not selected'}\n\n` +
+                            `*Monthly Cost:* AED ${monthlyCost}`
                             )}`} 
                             target="_blank" 
                             rel="noopener noreferrer"

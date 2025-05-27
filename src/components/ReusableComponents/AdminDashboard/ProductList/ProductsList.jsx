@@ -11,7 +11,7 @@ function ProductsList() {
 
   useEffect(() => {
     setLoading(true);
-    axios.get("https://sahara-backend-tubt.onrender.com/api/getallproducts")
+    axios.get("https://saharaoffice-backend.onrender.com/api/getallproducts",{ headers: { 'Content-Type': 'application/json' } })
       .then(response => {
         setProducts(response.data.products || []);
         setLoading(false);

@@ -10,7 +10,6 @@ import { useLoader } from '../../hooks/LoaderContext';
 import axios from "axios";
 function ContactComponents() {
           const { setLoading } = useLoader(); 
-    
     const {
         register,
         handleSubmit,
@@ -23,8 +22,7 @@ function ContactComponents() {
     const onSubmit = async (data) => {
         try {
             setLoading(true)
-          const response = await axios.post("https://sahara-backend-tubt.onrender.com/api/email/send-email", data);
-      
+          const response = await axios.post("https://saharaoffice-backend.onrender.com/api/email/send-email", data);
           if (response.status === 200) {
             alert("Email sent successfully!");
             reset();
@@ -36,7 +34,6 @@ function ContactComponents() {
           alert("An error occurred while sending the email.");
         }finally{
             setLoading(false)
-
         }
       };
 

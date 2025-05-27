@@ -165,7 +165,7 @@ const renderImage = (key, index) => {
 
       
       const response = await fetch(
-        `https://sahara-backend-tubt.onrender.com/api/update/${product._id}`,
+        `https://saharaoffice-backend.onrender.com/api/update/${product._id}`,
         {
           method: "PUT",
           body: formData,
@@ -192,7 +192,7 @@ const renderImage = (key, index) => {
 
     try {
       const response = await fetch(
-        `https://sahara-backend-tubt.onrender.com/api/delete/${product._id}`,
+        `https://saharaoffice-backend.onrender.com/api/delete/${product._id}`,
         {
           method: "DELETE",
         }

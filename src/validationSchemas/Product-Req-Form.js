@@ -14,7 +14,7 @@ export const ProductReqForm = yup.object().shape({
     
     mobile: yup.string()
     .required('Mobile number is required')
-    .matches(/^[0-9]{6,14}$/, 'Mobile number must be between 6 and 14 digits'),
+    .matches(/^[0-9]{6,16}$/, 'Mobile number must be between 6 and 16 digits'),
     
   email: yup.string()
     .required('Email is required')

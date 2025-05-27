@@ -678,6 +678,9 @@
 .btnSnd a{
     margin: auto;
 }
+.btnSnd button{
+    margin: auto;
+}
 .volume {
     padding: 15px 23px;
 }
@@ -793,6 +796,9 @@
     margin-bottom: 10px;
 }
 .btnSnd a{
+    width: 100%;
+}
+.btnSnd button{
     width: 100%;
 }
 
@@ -1232,6 +1238,11 @@
     font-size: 22px;
 }
 .btnSnd a {
+    padding: 12px 0px;
+    gap: 5px;
+    font-size: 18px;
+}
+.btnSnd button {
     padding: 12px 0px;
     gap: 5px;
     font-size: 18px;

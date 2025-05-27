@@ -1180,6 +1180,21 @@ input[type="range"]::-webkit-slider-thumb {
   gap: 10px;
   font-size: 22px;
   font-weight: 600;
+  
+  border-radius: 12px;
+}
+.btnSnd button{
+  width: 350px;
+  padding:12px 10px ;
+  border: none;
+  color: #fff;
+  background-color: #f55e0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 600;
   border-radius: 12px;
 }
 .wtsapp a{

@@ -53,3 +53,17 @@
     padding-left: 40px !important;
     letter-spacing: 3px;
   }
+
+
+  .react-tel-input .form-control{
+    background: none;
+    width: 390px;
+  }
+
+  .react-tel-input .form-control:focus{
+      background: none;
+  }
+
+  .react-tel-input .country-list .country{
+    text-align: left !important;
+  }

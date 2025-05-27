@@ -18,7 +18,7 @@ function RequestQuote() {
     const handleFormSubmit = async (data,reset) => {
         setLoading(true)
         try {
-          const response = await axios.post("https://sahara-backend-tubt.onrender.com/api/email/send-email", data);
+          const response = await axios.post("https://saharaoffice-backend.onrender.com/api/email/send-email", data);
       
           if (response.status === 200) {
            

@@ -64,9 +64,11 @@ function Blogs() {
           <div className="blog-list">
             {blogList.map(blog => (
               <Link to={`/blogs/${blog.slug}`} key={blog.id} className="blog-card">
-                <div className="blog-image">
-                  <img src={blog.image} alt={blog.slug} />
-                </div>
+                  {width >= 1000 ?
+                  <div className="blog-image">
+                    <img src={blog.image} alt={blog.slug} />
+                  </div> 
+                : ''}
                 <div className="blog-content">
                   <h4>{blog.title}</h4>
                   <p>{blog.excerpt}</p>

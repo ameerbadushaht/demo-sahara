@@ -19,11 +19,10 @@ function CommonForm({ buttonText = "Next", onSubmitSuccess }) {
   });
 
   const onSubmit = (data) => {
+    axios.post("https://saharaoffice-backend.onrender.com/api/email/send-email", data)
     // axios.post("http://localhost:5000/api/email/send-email", data)
-      axios.post("https://saharaoffice-backend.onrender.com/api/email/send-email", data)
     .then(() => {
       onSubmitSuccess?.(data, reset); 
-      console.log("Email sent successfully!", data);
       
     })
     .catch((err) => {

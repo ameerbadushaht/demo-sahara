@@ -414,6 +414,10 @@
     .AbHroImg img {
         width: 270px;
     }
+
+    .blogImg1 img{
+        width: 360px;
+        }
    
 
     .AbtImg {
@@ -694,6 +698,9 @@
 .ClntSec{
     margin: 10px 0;
 }
+.BlogSec{
+    margin: 10px 0;
+}
 /* SERVICES */
 .ServTxt {
     max-width: 100%;
@@ -903,6 +910,7 @@
 }
 
 @media(max-width:500px){
+
  .react-tel-input .form-control{
     background: none;
  width: auto;;
@@ -1259,6 +1267,12 @@
 }
 .ClntSec h3 {
     font-size: 23px;
+}
+.BlogSec h2 {
+    font-size: 28px;
+}
+.BlogSec h3 {
+    font-size: 22px;
 }
 /* PRODUCT */
 .partImgSlider img {

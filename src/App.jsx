@@ -22,6 +22,8 @@ import ProtectedRoute from './components/ReusableComponents/ProtectedRoute';
 import Loader from './components/ReusableComponents/Loader';
 import Sustainability from './components/Pages/Sustainability';
 import Privacy from './components/Pages/Privacy'
+import Blogs from './components/ReusableComponents/Blogs/Blogs';
+import BlogDetails from './components/ReusableComponents/Blogs/BlogDetails';
 // import Header from './components/ReusableComponents/Home-Header/Header';
 import { LoaderProvider } from './components/hooks/LoaderContext'; // 👈 import context
 
@@ -73,6 +75,8 @@ const AppWrapper = () => {
       <Route path="requestquote" element={<RequestQuote />} />
       <Route path="login" element={<LoginPage />} />
       <Route path="Sustainability" element={<Sustainability />} />
+      <Route path="blogs" element={<Blogs />} />
+       <Route path="/blogs/:slug" element={<BlogDetails />} />
       <Route
         path="/dashboard/*"
         element={

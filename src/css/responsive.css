@@ -1114,6 +1114,9 @@
 }
 
 @media (max-width:400px){
+     .react-tel-input .form-control{
+    width: 200px !important;
+  }
     .toggle {
         top: 42%;
     }
